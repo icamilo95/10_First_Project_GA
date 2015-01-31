@@ -1,0 +1,27 @@
+.recipe {
+	border:1px solid black;
+	height: 70px;
+}
+
+
+.menubar {
+	border:1px solid black;
+}
+
+.menu {
+	border:1px solid black;
+	height: 60px;
+}
+
+.promo {
+	border:1px solid black;
+	height: 70px;
+}
+
+.product-1 {
+	border:1px solid black;
+	height: 70px;
+}
+.separator-1, .separator-2  {
+	padding-top: 10px;
+}
