@@ -1,16 +1,19 @@
-.container-2 {
-	border:1px solid blue;
-	
-}
 
+/*RECIPE*/
 .recipe {
 	border:1px solid black;
 	height: 70px;
+	background-color: #42b99c;
 }
 
-
+/*MENUBAR*/
 .menubar {
 	border:1px solid black;
+	background-color: #4d8ed0;
+}
+
+.container-2 {
+	border:1px solid blue;
 }
 
 .menu {
@@ -18,28 +21,40 @@
 	height: 60px;
 }
 
+/*PRMOTION & CHECKOUT*/
+
 .promo {
 	border:1px solid black;
 	height: 70px;
 }
 
+.final-amount {
+	display: inline-block;
+}
+
+/*PRODUCT-1*/
 .product-1 {
 	border:1px solid black;
 	height: 170px;
 }
 
 .amount-1 {
-	height: 20px;
+	height: 30px;
 	border:1px solid black;
 }
 
+.amount-result {
+	display: inline-block;
+}
+
+/*PRODUCT-2*/
 .product-2 {
 	border:1px solid black;
 	height: 170px;
 }
 
 .amount-2 {
-	height: 20px;
+	height: 30px;
 	border:1px solid black;
 }
 
