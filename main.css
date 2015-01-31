@@ -1,3 +1,8 @@
+.container-2 {
+	border:1px solid blue;
+	
+}
+
 .recipe {
 	border:1px solid black;
 	height: 70px;
@@ -20,8 +25,26 @@
 
 .product-1 {
 	border:1px solid black;
-	height: 70px;
+	height: 170px;
 }
-.separator-1, .separator-2  {
-	padding-top: 10px;
+
+.amount-1 {
+	height: 20px;
+	border:1px solid black;
 }
+
+.product-2 {
+	border:1px solid black;
+	height: 170px;
+}
+
+.amount-2 {
+	height: 20px;
+	border:1px solid black;
+}
+
+
+.separator-1, .separator-2 , .separator-3, .separator-4 , .separator-5 {
+	margin-top: 10px;
+}
+
