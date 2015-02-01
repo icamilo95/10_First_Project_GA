@@ -1,6 +1,6 @@
 $(document).ready(function() { 
 
-function addingProductstoList () {
+function addingProductsToList () {
 
 	ProductsList = {};
 	amountOfProducts = 0;
@@ -10,9 +10,17 @@ function addingProductstoList () {
 		$('.product').on("click", function (e){
 		var productCode = parseInt(this.id);   //Takes the number out of the string to compare with amount-result number
 		addNewProdcutToList(productCode);	
+		});		
+		$('.positive').on("click", function (e){
+		var productCode = parseInt(this.id);
+		addNewProdcutToList(productCode);	
+		});
+		$('.negative').on("click", function (e){
+		var productCode = parseInt(this.id);
+		console.log(productCode);
+		subtractProdcutFromList(productCode);	
 		});
 	}	
-
 
 	function addNewProdcutToList (productCode){		  
 		if (productCode in ProductsList === false) {
@@ -21,7 +29,14 @@ function addingProductstoList () {
 			ProductsList[productCode] += 1;
 		} displayAmount(productCode);
 	}		
-			
+
+	function subtractProdcutFromList (productCode){		  
+		if (ProductsList[productCode] > 0) {
+			ProductsList[productCode] -= 1;
+		 	displayAmount(productCode);
+		}
+	}			
+
 
 	function displayAmount (productCode) {
 			for (var i = 0; i < 11; i++) {
@@ -39,5 +54,5 @@ function addingProductstoList () {
 
 
 
-	addingProductstoList();
+	addingProductsToList();
  });
