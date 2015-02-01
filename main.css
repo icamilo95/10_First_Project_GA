@@ -33,7 +33,7 @@
 }
 
 /*PRODUCT-1*/
-.product-1 {
+.product {
 	border:1px solid black;
 	height: 170px;
 }
@@ -48,10 +48,6 @@
 }
 
 /*PRODUCT-2*/
-.product-2 {
-	border:1px solid black;
-	height: 170px;
-}
 
 .amount-2 {
 	height: 30px;

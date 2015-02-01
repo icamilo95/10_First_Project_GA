@@ -1,31 +1,43 @@
 $(document).ready(function() { 
 
+function addingProductstoList () {
 
-	function addProducts (){
-		contProducts = 1;
-		oldProdcutCode = 0;
-		$('.product-1').on("click", function (e){
-			var productCode = parseInt(this.id);   //Takes the number out of the string to compare with amount-result number
-			
-			if (productCode !== oldProdcutCode) {
-				oldProdcutCode = productCode;
-				contProducts = 1;
-			}
+	ProductsList = {};
+	amountOfProducts = 0;
+	checkForProduct();	
+
+	function checkForProduct (){
+		$('.product').on("click", function (e){
+		var productCode = parseInt(this.id);   //Takes the number out of the string to compare with amount-result number
+		addNewProdcutToList(productCode);	
+		});
+	}	
+
+
+	function addNewProdcutToList (productCode){		  
+		if (productCode in ProductsList === false) {
+			ProductsList[productCode] = 1;	
+		} else {
+			ProductsList[productCode] += 1;
+		} displayAmount(productCode);
+	}		
 			
 
-			for (var i = 0; i < 9; i++) {
+	function displayAmount (productCode) {
+			for (var i = 0; i < 11; i++) {
 				if (productCode === i) {
 					var result = String("#" +[i] + "-result");	
-					$(result).text(contProducts++);
+					$(result).text(ProductsList[productCode]);
+				
 				}
 			}
-		});
 	}
+}	
 
 
 
 
 
 
-	addProducts();
+	addingProductstoList();
  });
