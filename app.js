@@ -3,10 +3,11 @@ $(document).ready(function() {
 function addingProductsToList () {
 
 	var newProductsList = {};
-	var inventoryList = {1:10,2:20,3:30,4:40,5:50,6:10,7:20,8:30,9:40,10:50};
+	var inventoryList = {1:11.30,2:23.00,3:30.00,4:40.00,5:50.00,6:10.20,7:20.00,8:30.00,9:40.00,10:50.00};
 	var totalPerProduct = {};
-	
+	displayPrices();
 	checkForProduct();	
+	
 	
 
 	function checkForProduct (){
@@ -41,14 +42,14 @@ function addingProductsToList () {
 	}			
 
 
-	function displayAmount (productCode) {
-			for (var i = 0; i < 11; i++) {
-				if (productCode === i) {
-					var result = String("#" +[i] + "-result");	
-					$(result).text(newProductsList[productCode]);
-					totalize();
-				}
+	function displayAmount (productCode) { //display amount in line of quantities
+		for (var i = 0; i < 11; i++) {
+			if (productCode === i) {
+				var result = String("#" +[i] + "-result");	
+				$(result).text(newProductsList[productCode]);
+				totalize();
 			}
+		}
 	}
 
 	function totalize () {
@@ -59,15 +60,24 @@ function addingProductsToList () {
 		}  
 		var totalToCart = 0;
   		for( var productCode in totalPerProduct ) {
-    		if( totalPerProduct.hasOwnProperty(productCode)) {
+  			if( totalPerProduct.hasOwnProperty(productCode)) {
     			totalToCart += parseFloat( totalPerProduct[productCode] );
     		}
  		}
-  		console.log(totalToCart);
-  		$(".totalHolder").attr("placeholder",totalToCart);
+  		$(".totalHolder").attr("placeholder","$ " + totalToCart);
 	}
 
 	
+	function displayPrices () {
+		for( var product in inventoryList ) {
+			for (var i = 1; i < 11; i++) {
+				if ( parseInt(product)  === i ) {
+					var result = String("." + [i] + "-price");
+					$(result).attr("placeholder","$ "  + inventoryList[product]);	
+					}	
+				}			
+		}
+	}
 
 
 
