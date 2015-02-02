@@ -42,17 +42,17 @@ function addingProductsToList () {
 	}			
 
 
-	function displayAmount (productCode) { //display amount in line of quantities
+	function displayAmount (productCode) { //display amount in line of "quantities in html"
 		for (var i = 0; i < 11; i++) {
 			if (productCode === i) {
 				var result = String("#" +[i] + "-result");	
 				$(result).text(newProductsList[productCode]);
-				totalize();
+				totalizePrices();
 			}
 		}
 	}
 
-	function totalize () {
+	function totalizePrices () {
 		for (var clientProduct in newProductsList) {
 			var pricePerProduct = inventoryList[clientProduct];
 			var amountPerProduct = newProductsList[clientProduct]; 
@@ -65,6 +65,14 @@ function addingProductsToList () {
     		}
  		}
   		$(".totalHolder").attr("placeholder","$ " + totalToCart);
+  		storeData();
+	}
+
+
+	function storeData () {
+		var listOfProducts = newProductsList;
+		var stringifiedList = JSON.stringify(listOfProducts);
+		localStorage.setItem("listOfProducts",stringifiedList);
 	}
 
 	
@@ -79,20 +87,29 @@ function addingProductsToList () {
 		}
 	}
 
-
-
-
 	// function Product (quantity,price){
 	// 	this.quantity = quantity;
 	// 	this.price = price;
 	// }
-
 	// var bread = new Product (20,25);
 	// var milk = new Product (10,10);
 
+	function retrieveData () {
+	var frozen = localStorage.getItem("listOfProducts");
+	var unfrozen = JSON.parse(frozen);
+	console.log(unfrozen);
+	}
 
-totalize();
+
+retrieveData();
+totalizePrices();
 }	
+
+
+
+
+
+
 addingProductsToList();
 
 });
