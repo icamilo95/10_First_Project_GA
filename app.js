@@ -11,7 +11,6 @@ addingProductsToList();
 function retrieveData () {			
 	var frozen = localStorage.getItem("listOfProducts");
 	var unfrozen = JSON.parse(frozen);
-	console.log("unfrozen ," , unfrozen);
 	if (unfrozen !== null) {
 		newProductsList = unfrozen;
 		return newProductsList;
@@ -129,15 +128,16 @@ totalizePrices();
 	
 
 	function	carouselRecipes (){
-		$(".img-recipe").on("onpageshow",function(e){
-			console.log("Camilo");
+		$(".img-recipe").ready(function(e){
 			self = this;
 			var cont = 1;
 			loop();
 			function loop (){
 				setTimeout (function() {
-					// console.log($(self).attr("src","img/415x234(" + cont + ").jpg"));
-					$(self).attr("src","img/415x234(" + cont + ").jpg");
+					$("#recipe1").attr("src","img/415x234(" + cont + ").jpg");
+					$("#recipe2").attr("src","img/415x234(" + (cont+1) + ").jpg");
+					$("#recipe3").attr("src","img/415x234(" + (cont+2) + ").jpg");
+					$("#recipe4").attr("src","img/415x234(" + (cont+3) + ").jpg");
 					cont++;
 						if (cont < 9) {
 							loop();
@@ -145,7 +145,7 @@ totalizePrices();
 							cont = 1;
 							loop();
 						}
-				},1000);
+				},3000);
 			}
 		});
 	}
