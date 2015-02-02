@@ -1,29 +1,39 @@
 $(document).ready(function() { 
 
+var inventoryList = {1:11.30,2:23,3:30.8,4:40,5:50,6:10.20,7:20,8:30,9:40,10:50};
+var newProductsList = {};
+
+carouselRecipes();
+retrieveData();
+addingProductsToList();
+
+
+function retrieveData () {			
+	var frozen = localStorage.getItem("listOfProducts");
+	var unfrozen = JSON.parse(frozen);
+	console.log("unfrozen ," , unfrozen);
+	if (unfrozen !== null) {
+		newProductsList = unfrozen;
+		return newProductsList;
+	}
+}
+
 function addingProductsToList () {
 
-	var newProductsList = {};
-	var inventoryList = {1:11.30,2:23.00,3:30.00,4:40.00,5:50.00,6:10.20,7:20.00,8:30.00,9:40.00,10:50.00};
 	var totalPerProduct = {};
 	displayPrices();
 	checkForProduct();	
-	
-	var test = 0; //
 
 	function checkForProduct (newProductsListInStorage){
-		console.log(typeof(newProductsListInStorage) + "ca");
-		if (newProductsListInStorage === "object") {
-			// console.log("camilo");
-		}
-
+		
 
 		$('.product').on("click", function (e){
 		var productCode = parseInt(this.id);   
-		addNewProdcutToList(productCode);	
+		addNewProductToList(productCode);	
 		});		
 		$('.positive').on("click", function (e){
 		var productCode = parseInt(this.id);
-		addNewProdcutToList(productCode);	
+		addNewProductToList(productCode);	
 		});
 		$('.negative').on("click", function (e){
 		var productCode = parseInt(this.id);
@@ -31,7 +41,7 @@ function addingProductsToList () {
 		});
 	}	
 
-	function addNewProdcutToList (productCode){		  
+	function addNewProductToList (productCode){		  
 		if (productCode in newProductsList === false) {
 			newProductsList[productCode] = 1;	
 		} else {
@@ -47,10 +57,12 @@ function addingProductsToList () {
 		}
 	}			
 
-
 	function displayAmount (productCode) { //display amount in line of "quantities in html"
+		
+
+
 		for (var i = 0; i < 11; i++) {
-			if (productCode === i) {
+			if (parseInt(productCode) === i) {
 				var result = String("#" +[i] + "-result");	
 				$(result).text(newProductsList[productCode]);
 				totalizePrices();
@@ -79,7 +91,7 @@ function addingProductsToList () {
 		var listOfProducts = newProductsList;
 		var stringifiedList = JSON.stringify(listOfProducts);
 		localStorage.setItem("listOfProducts",stringifiedList);
-		retrieveData(listOfProducts);
+		//retrieveData(listOfProducts);
 	}
 
 	
@@ -102,44 +114,46 @@ function addingProductsToList () {
 	// var milk = new Product (10,10);
 
 	
+	function readFrozenData () {
+		for (var productCodes in newProductsList) {
+			var productCode = productCodes;
+			displayAmount(productCode);
+		}  
+	}
 
 
-
+readFrozenData();
 totalizePrices();
 }	
 
-	function retrieveData (listOfProducts) {	//IT is inside the add function in this moment
-		if (typeof(listOfProducts) === 'object') {
-			var frozen = localStorage.getItem("listOfProducts");
-			var unfrozen = JSON.parse(frozen);
-			
-		}	
-	}
+	
 
 	function	carouselRecipes (){
-		$(".img-recipe").on("mouseover",function(e){
-			// $(this).attr("src","img/415x234(" + 2 + ").jpg");
-			// console.log($(this));
+		$(".img-recipe").on("onpageshow",function(e){
+			console.log("Camilo");
 			self = this;
 			var cont = 1;
 			loop();
 			function loop (){
 				setTimeout (function() {
-					console.log($(self).attr("src","img/415x234(" + cont + ").jpg"));
+					// console.log($(self).attr("src","img/415x234(" + cont + ").jpg"));
 					$(self).attr("src","img/415x234(" + cont + ").jpg");
 					cont++;
 						if (cont < 9) {
 							loop();
-						}	
-				},3000);
+						} else if (cont === 9) {
+							cont = 1;
+							loop();
+						}
+				},1000);
 			}
 		});
 	}
 
 
-carouselRecipes();
-addingProductsToList();
-retrieveData();
+	
+
+
 
 });
 
