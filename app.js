@@ -8,6 +8,7 @@ retrieveData();
 addingProductsToList();
 
 
+
 function retrieveData () {			
 	var frozen = localStorage.getItem("listOfProducts");
 	var unfrozen = JSON.parse(frozen);
@@ -53,13 +54,11 @@ function addingProductsToList () {
 		if (newProductsList[productCode] > 0) {
 			newProductsList[productCode] -= 1;
 		 	displayAmount(productCode);
+			checkIfProductsinList();
 		}
 	}			
 
 	function displayAmount (productCode) { //display amount in line of "quantities in html"
-		
-
-
 		for (var i = 0; i < 11; i++) {
 			if (parseInt(productCode) === i) {
 				var result = String("#" +[i] + "-result");	
@@ -82,11 +81,21 @@ function addingProductsToList () {
     		}
  		}
   		$(".totalHolder").attr("placeholder","$ " + totalToCart);
-  		storeData();
+  		checkIfProductsinList(totalToCart);
+  		
+	}
+
+
+	function checkIfProductsinList (totalToCart){
+		if (totalToCart === 0) {
+			newProductsList = {};
+		}
+		storeData();
 	}
 
 
 	function storeData () {
+		console.log(newProductsList);
 		var listOfProducts = newProductsList;
 		var stringifiedList = JSON.stringify(listOfProducts);
 		localStorage.setItem("listOfProducts",stringifiedList);
@@ -127,31 +136,44 @@ totalizePrices();
 
 	
 
-	function	carouselRecipes (){
-		$(".img-recipe").ready(function(e){
-			self = this;
-			var cont = 1;
-			loop();
-			function loop (){
-				setTimeout (function() {
-					$("#recipe1").attr("src","img/415x234(" + cont + ").jpg");
-					$("#recipe2").attr("src","img/415x234(" + (cont+1) + ").jpg");
-					$("#recipe3").attr("src","img/415x234(" + (cont+2) + ").jpg");
-					$("#recipe4").attr("src","img/415x234(" + (cont+3) + ").jpg");
-					cont++;
-						if (cont < 9) {
-							loop();
-						} else if (cont === 9) {
-							cont = 1;
-							loop();
-						}
-				},3000);
-			}
-		});
-	}
+
+function	carouselRecipes (){
+	$(".img-recipe").ready(function(e){
+		self = this;
+		var cont = 1;
+		loop();
+		function loop (){
+			setTimeout (function() {
+				// DEBUG
+				$("#recipe1").attr("src","img/415x234(" + cont + ").jpg");
+				$("#recipe2").attr("src","img/415x234(" + (cont+1) + ").jpg");
+				$("#recipe3").attr("src","img/415x234(" + (cont+2) + ").jpg");
+				$("#recipe4").attr("src","img/415x234(" + (cont+3) + ").jpg");
+				cont++;
+					if (cont < 9) {
+						loop();
+					} else if (cont === 9) {
+						cont = 1;
+						loop();
+					}
+			},3000);
+		}
+	});
+}
 
 
 	
+
+
+
+
+
+
+
+
+
+
+
 
 
 
