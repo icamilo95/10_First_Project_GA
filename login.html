@@ -67,10 +67,29 @@
 <!-- REGISTRATION FORM -->
 		<div class="separator-2">
 			<div class="row">
-				<div class="col-md-7 format">Form</div>
-				<div class="col-md-5 ad">Test 1<div>
+				<form action="javascript:void(0)">
+
+					<div class="col-md-1 format"></div>
+					<div class="col-md-2 format labels">
+						<label for="">Name:</label><br><br>
+						<label for="">Last name:</label><br><br>	
+						<label for="">Email address:</label><br><br>
+						<label for="">Password:</label><br><br><br>
+						<label for="">Type password again:</label><br>
+					</div>
+					<div class="col-md-4 format">
+						<input type="text" id="name" placeholder="welcome to ..."><br><br>
+						<input type="text" id="last-name"><br><br>
+						<input type="text" id="email"><br><br>
+						<input type="password" id="password">
+						<h5 id="message-digits">Password must contain at least 6 characters</h5>
+						<input type="password" id="password-again"><br><br>
+						<h5 id="cornfirm"> </h5>
+						<input type="submit" id="buton">
+					</div>
 				
-			</div>
+					<div class="col-md-5 ad">Test 1<div></div>
+				</form>
 		</div>
 
 

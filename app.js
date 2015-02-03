@@ -6,6 +6,7 @@ var newProductsList = {};
 carouselRecipes();
 retrieveData();
 addingProductsToList();
+checkPassword();
 
 
 
@@ -163,7 +164,33 @@ function	carouselRecipes (){
 
 
 	
+function checkPassword() {
+	var firstPassword = "";
+	var secondPassword = "";
+	$("form #password").on("keyup", function(e){
+		console.log($("#password").val().length);
+		if ($("#password").val().length < 6) {
+			$("#message-digits").text("Password must contain at least 6 characters");
+			$("#message-digits").show();	
+		}  else {
+			firstPassword = $("#password").val();
+			$("#message-digits").text("Secure password");
+			console.log(firstPassword);
+		}
+	});
 
+	$("form #password-again").on("keyup", function(e){
+			console.log($("#password-again").val().length);
+			secondPassword = $("#password-again").val();
+			console.log(secondPassword);
+		if (secondPassword === firstPassword) {
+			$("#cornfirm").text("Correct Log In");	
+		} else {
+			$("#cornfirm").text("Wrong password");
+		}
+	});
+
+}
 
 
 

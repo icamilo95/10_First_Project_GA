@@ -54,13 +54,17 @@
 
 .format {
 	height: 400px;
+	background-color: white;
+
 }
 
 .separator-2 {
 	background-color: #29a936;
 }
 
-
+.labels {
+	text-align: right;
+}
 
 
 .separator-1, .separator-2 , .separator-3, .separator-4 , .separator-5 {
