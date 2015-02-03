@@ -184,11 +184,14 @@ function checkPassword() {
 			secondPassword = $("#password-again").val();
 			console.log(secondPassword);
 		if (secondPassword === firstPassword) {
-			$("#cornfirm").text("Correct Log In");	
+			$("#cornfirm").text("Correct Log In");
+			$("#button-log").attr("onClick","parent.location='index.html'");					
 		} else {
 			$("#cornfirm").text("Wrong password");
 		}
 	});
+
+	
 
 }
 
