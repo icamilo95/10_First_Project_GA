@@ -1,6 +1,6 @@
+/*------------------SHARED CSS HTML---------------------*/
 
 /*RECIPE*/
-
 .row {
 	margin-left: 0px;
 	margin-right: 0px;
@@ -18,11 +18,8 @@
 	height: 100%;
 }
 
+
 /*MENUBAR*/
-.menubar {
-	border:1px solid black;
-	background-color: #4d8ed0;
-}
 
 .search-menu-group {
 	margin-top: 12px;
@@ -35,9 +32,10 @@
 .menu {
 	margin-top: 20px;
 	text-align: center;
-	height: 40px;
-	
+	height: 40px;	
 }
+
+
 
 /*PRMOTION & CHECKOUT*/
 
@@ -49,6 +47,21 @@
 .final-amount {
 	display: inline-block;
 }
+
+
+.separator-1, .separator-2 , .separator-3, .separator-4 , .separator-5 {
+	margin-top: 10px;
+}
+
+
+/*------------------INDEX HTML---------------------*/
+
+/*MENUBAR*/
+.menubar {
+	border:1px solid black;
+	background-color: #4d8ed0;
+}
+
 
 /*PRODUCT-1*/
 .product {
@@ -85,7 +98,40 @@
 }
 
 
-.separator-1, .separator-2 , .separator-3, .separator-4 , .separator-5 {
-	margin-top: 10px;
+
+
+
+
+/*------------------LOGIN HTML---------------------*/
+
+
+/*MENUBAR*/
+.menubar-login {
+	border:1px solid black;
+	background-color: #237b26;
+}
+
+/*FORMAT & AD*/
+/*.format-login {
+	height: 400px;
+	background-color: white;
+
+}*/
+
+.separator-2-login {
+	background-color: #29a936;
+}
+
+.labels {
+	text-align: right;
+}
+
+
+/*------------------SEARCH HTML---------------------
+
+/*MENUBAR*/
+.menubar-search {
+	border:1px solid black;
+	background-color: #b7002a;
 }
 

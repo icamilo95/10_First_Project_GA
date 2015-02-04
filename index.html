@@ -13,6 +13,7 @@
 </head>
 <body>
 <div class="container-1">
+	
 	<!-- RECIPES ON TOP -->
 	<div class="row recipes ">
 	  <div class="col-md-3 recipe"><img src="img/415x234(1).jpg" class="img-recipe" id="recipe1" alt="img1" ></div>
@@ -26,15 +27,35 @@
 	<div class="row menubar">
 	  <div class="col-md-2 menu"><a href="index.html" class="signup">LOGO</a></div>
 	  <div class="col-md-4">
-	  	<form class="navbar-form navbar-left search-menu-group" role="search">
-	  	<div class="form-group">
-	    <input type="text" class="form-control search-input" placeholder="Search">
-	  	</div>
-	  	<button type="submit" class="btn btn-default">Submit</button>
+	 
+
+	  	<form action="javascrip:void(0)" class="navbar-form navbar-left search-menu-group" role="search">
+	  		
+	  		<div class="form-group">
+	    	    <input type="text" class="form-control inputSearch" placeholder="Search">
+	  		</div>
+	  	
+	  		<button type="submit" class="btn btn-default send btn  send" data-toggle="modal" data-target=".bs-example-modal-sm" >Submit</button>
 		</form>
+	  
+
+	  <!-- ojo -->
+		
+	<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-sm ">
+			<div class="modal-content">List of products <hr>
+				<ul class="list-searched">
+				</ul>
+			</div>
+		</div>
+	</div>
+
+		<!-- ojo -->
+
+
 	  </div>
 	  
-	  <div class="col-md-1 menu"><a href="login.html" class="signup">Log In</a></div>
+	  <div class="col-md-1 menu"><a href="" class="signup loginClick">Log In</a></div>
 	  <div class="col-md-1 menu"><a href="" class="signup">Sign Up</a></div>
 	  <div class="col-md-1 menu"><a href="" class="signup">Closest_Store</a></div>
 	  <div class="col-md-1 menu"><a href="" class="signup">Delivery</a></div>
@@ -58,13 +79,57 @@
 					<div class="final-amount"><input type="text" class="totalHolder" placeholder="Your total"> </div>
 					<br>
 					<div>
-						<form action="login.html">
-    					<input type="submit" value="Proceed to Checkout!">
+						<form action="#">
+    					<input type="submit" value="Proceed to Checkout!"  class="loginClick">
 						</form>
 					</div>
 				</div>
 			</div>
 		</div>	
+
+		<!-- DISPLAY SEARCHED PRODUCT  -->
+
+		<div class="image searched-product-display">
+			<img class="productImage" src="">	
+			<h3 class="item-category">dsdsds</h3>
+			<p class="description"></p>
+		</div>
+
+
+		<!-- LOG IN FORM -->
+		<div class="log-in-form-div">
+			<form class="login-form" action="javascript:void(0)">
+				
+
+				<label for="">Name:</label>
+				<label for="">Last name:</label>	
+				<label for="">Email address:</label>
+				<label for="">Password:</label>
+				<label for="">Type password again:</label>
+			
+			
+				<input type="text" id="name" placeholder="welcome to ...">
+				<input type="text" id="last-name">
+				<input type="text" id="email">
+				<input type="password" id="password">
+				<h5 id="message-digits">Password must contain at least 6 characters</h5>
+				<input type="password" id="password-again">
+				<h5 id="cornfirm"> </h5>
+				<input type="submit" id="button-log" onClick="parent.location='login.html'">
+				
+				
+				<div class="">Test 1</div>
+			</form>
+		</div>
+
+		
+
+
+
+
+
+
+
 		<!-- FIRST LINE OF PRODUCTS -->
 		<div class="separator-2">
 			<div class="row products-1">
@@ -189,7 +254,9 @@
 
 <!-- JAVASCRIPT -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script src="app.js"></script>
+<!-- <script src="API.js"></script> -->
 </body>
 </html>	
 
