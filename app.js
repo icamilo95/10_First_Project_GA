@@ -84,6 +84,7 @@ function addingProductsToList () {
   		for( var productCode in totalPerProduct ) {
   			if( totalPerProduct.hasOwnProperty(productCode)) {
     			totalToCart += parseFloat( totalPerProduct[productCode] );
+    			totalToCart =  Math.round(totalToCart);
     		}
  		}
   		$(".totalHolder").attr("placeholder","$ " + totalToCart);
@@ -198,6 +199,7 @@ function checkPassword() {
 // --------------SEARCH FOR PRODUCT API--------------
 
 function getProduct (){
+
 	$("form").on("submit",function(e){
 		e.preventDefault();
 	    var productToFind = $(".inputSearch").val();
@@ -212,7 +214,7 @@ function displayProductList (selectedProductFromGet) {
 		url: "http://www.supermarketapi.com/api.asmx/SearchByProductName",
 		type: 'GET',   
   		data: {
-       		APIKEY:"9b1cf47834", //Recuerda esconderla
+       		APIKEY:"9b1cf47834", 
    		 	ItemName: selectedProductFromGet
    			},
   			dataType: 'xml',
@@ -236,18 +238,13 @@ function displayProductList (selectedProductFromGet) {
 function displayProductImage (){
 	
 	$("ul").on("click", ".productSearched",function(e){
-		// $(document).load("search.html");
-		// window.location.href = "search.html";
 		$("productImage").empty();
 		var selectedProduct = $(this).text();
-
-
-		
 		$.ajax({
 		url: "http://www.supermarketapi.com/api.asmx/SearchByProductName",
 		type: 'GET',   
   		data: {
-       		APIKEY:"9b1cf47834", //Recuerda esconderla
+       		APIKEY:"9b1cf47834", 
    		 	ItemName: selectedProduct
    			},
   			dataType: 'xml',
@@ -283,7 +280,9 @@ $('#myModal').on('shown.bs.modal', function () {
 // --------------UNHIDE DIV'S--------------
 
 function showLogIn () {
+
 	$(".loginClick").on("click", function (e) {
+		hideDivsFade();
 		$(".log-in-form-div").fadeIn(500);	
 	});
 }
@@ -305,6 +304,13 @@ function hideDivs () {
 function hideDivsFade () {
 	$(".searched-product-display").fadeOut(500);
 	$(".log-in-form-div").fadeOut(500);
+	$(".hide-buton").on("click",function(e){
+		$(".log-in-form-div").fadeOut(500);
+	});
+	$(".hide-buton-search").on("click",function(e){
+		$(".searched-product-display").fadeOut(500);
+	});
+
 }
 
 
