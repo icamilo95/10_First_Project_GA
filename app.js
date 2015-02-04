@@ -64,6 +64,7 @@ function addingProductsToList () {
 	}			
 
 	function displayAmount (productCode) { //display amount in line of "quantities in html"
+		hideDivsFade();
 		for (var i = 0; i < 11; i++) {
 			if (parseInt(productCode) === i) {
 				var result = String("#" +[i] + "-result");	
@@ -218,7 +219,7 @@ function displayProductList (selectedProductFromGet) {
 			success: function(data) {
 				
 				if (data.childNodes[0].childNodes[0] === undefined) {
-					$("h4").text("Product does not exist! Try again please.");
+					$("ul").text("Product does not exist! Try again please.");
 				}else {
 					$("ul").empty();
 					$.each($(data).find('Product'),function(index,product){
@@ -254,16 +255,18 @@ function displayProductImage (){
 				var productImg =$("ItemImage",$(data).find('Product')[0]).text();
 				var productDescription =$("ItemDescription",$(data).find('Product')[0]).text();
 				var productCategory =$("ItemCategory",$(data).find('Product')[0]).text();
-				console.log(productImg);
+				// console.log(productImg);
 				 $(".productImage").attr("src",productImg);
 				 $(".description").text(productDescription);
 				 $(".item-category").text(productCategory);
 			
 			// WE NEED TO DO SOME APPENDING/REMOVING
 			showSearchedProduct();
+
 			$("separator-1").append(productImg);
 			$("separator-1").append(productDescription);
 			$("separator-1").append(productCategory);
+			console.log(productImg);
 			// $('#myModal').modal('hide');
 			}
 
@@ -299,6 +302,10 @@ function hideDivs () {
 	$(".log-in-form-div").hide();
 }
 
+function hideDivsFade () {
+	$(".searched-product-display").fadeOut(500);
+	$(".log-in-form-div").fadeOut(500);
+}
 
 
 

@@ -1,4 +1,4 @@
-/*------------------SHARED CSS HTML---------------------*/
+
 
 /*RECIPE*/
 .row {
@@ -21,9 +21,7 @@
 
 /*MENUBAR*/
 
-.search-menu-group {
-	margin-top: 12px;
-}
+
 
 .signup {
 	color: white;
@@ -54,7 +52,7 @@
 }
 
 
-/*------------------INDEX HTML---------------------*/
+
 
 /*MENUBAR*/
 .menubar {
@@ -102,36 +100,10 @@
 
 
 
-/*------------------LOGIN HTML---------------------*/
-
-
-/*MENUBAR*/
-.menubar-login {
-	border:1px solid black;
-	background-color: #237b26;
-}
-
-/*FORMAT & AD*/
-/*.format-login {
-	height: 400px;
-	background-color: white;
-
-}*/
-
-.separator-2-login {
-	background-color: #29a936;
-}
-
 .labels {
 	text-align: right;
 }
 
 
-/*------------------SEARCH HTML---------------------
 
-/*MENUBAR*/
-.menubar-search {
-	border:1px solid black;
-	background-color: #b7002a;
-}
 

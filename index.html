@@ -37,25 +37,21 @@
 	  	
 	  		<button type="submit" class="btn btn-default send btn  send" data-toggle="modal" data-target=".bs-example-modal-sm" >Submit</button>
 		</form>
-	  
 
-	  <!-- ojo -->
+	  						<!-- Modal -->
 		
-	<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-sm ">
-			<div class="modal-content">List of products <hr>
-				<ul class="list-searched">
-				</ul>
+		<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-sm ">
+				<div class="modal-content">List of products <hr>
+					<ul class="list-searched">
+					</ul>
+				</div>
 			</div>
 		</div>
-	</div>
-
-		<!-- ojo -->
-
-
+						<!-- end of Modal -->
 	  </div>
 	  
-	  <div class="col-md-1 menu"><a href="" class="signup loginClick">Log In</a></div>
+	  <div class="col-md-1 menu loginClick "><a href="" class="signup loginClick">Log In</a></div>
 	  <div class="col-md-1 menu"><a href="" class="signup">Sign Up</a></div>
 	  <div class="col-md-1 menu"><a href="" class="signup">Closest_Store</a></div>
 	  <div class="col-md-1 menu"><a href="" class="signup">Delivery</a></div>
@@ -91,7 +87,7 @@
 
 		<div class="image searched-product-display">
 			<img class="productImage" src="">	
-			<h3 class="item-category">dsdsds</h3>
+			<h3 class="item-category"></h3>
 			<p class="description"></p>
 		</div>
 
@@ -100,25 +96,31 @@
 		<div class="log-in-form-div">
 			<form class="login-form" action="javascript:void(0)">
 				
+				<div class="row">
+				  <div class="col-md-1">.col-md-1</div>
+				  <div class="col-md-2">
+					<label for="">Name:</label><br>
+					<label for="">Last name:</label><br>	
+					<label for="">Email address:</label><br>
+					<label for="">Password:</label><br>
+					<label for="">Type password again:</label>
+				  </div>
+				  <div class="col-md-4">
 
-				<label for="">Name:</label>
-				<label for="">Last name:</label>	
-				<label for="">Email address:</label>
-				<label for="">Password:</label>
-				<label for="">Type password again:</label>
+					<input type="text" id="name" placeholder="welcome to ..."><br>
+					<input type="text" id="last-name"><br>
+					<input type="text" id="email"><br>
+					<input type="password" id="password"><br>
+					<h5 id="message-digits">Password must contain at least 6 characters</h5>
+					<input type="password" id="password-again">
+					<h5 id="cornfirm"> </h5>
+					<input type="submit" id="button-log" onClick="parent.location='login.html'">
+
+				  </div>
+				  <div class="col-md-1">.col-md-1</div>
+				</div>
 			
-			
-				<input type="text" id="name" placeholder="welcome to ...">
-				<input type="text" id="last-name">
-				<input type="text" id="email">
-				<input type="password" id="password">
-				<h5 id="message-digits">Password must contain at least 6 characters</h5>
-				<input type="password" id="password-again">
-				<h5 id="cornfirm"> </h5>
-				<input type="submit" id="button-log" onClick="parent.location='login.html'">
 				
-				
-				<div class="">Test 1</div>
 			</form>
 		</div>
 
