@@ -1,6 +1,6 @@
 $(document).ready(function() { 
 
-var inventoryList = {1:11.30,2:23,3:30.8,4:40,5:50,6:10.20,7:20,8:30,9:40,10:50};
+var inventoryList = {1:11.40,2:23,3:30.8,4:40,5:50,6:10.20,7:20,8:30,9:40,10:50};
 var newProductsList = {};
 
 carouselRecipes();
@@ -8,7 +8,7 @@ retrieveData();
 addingProductsToList();
 checkPassword();
 
-
+// RETRIEVE DATA FROM LOCA STORAGE
 
 function retrieveData () {			
 	var frozen = localStorage.getItem("listOfProducts");
@@ -19,6 +19,8 @@ function retrieveData () {
 	}
 }
 
+// ADD PRODUCT TO LIST AND CART - TOTALIZE
+
 function addingProductsToList () {
 
 	var totalPerProduct = {};
@@ -26,8 +28,6 @@ function addingProductsToList () {
 	checkForProduct();	
 
 	function checkForProduct (newProductsListInStorage){
-		
-
 		$('.product').on("click", function (e){
 		var productCode = parseInt(this.id);   
 		addNewProductToList(productCode);	
@@ -83,7 +83,6 @@ function addingProductsToList () {
  		}
   		$(".totalHolder").attr("placeholder","$ " + totalToCart);
   		checkIfProductsinList(totalToCart);
-  		
 	}
 
 
@@ -100,7 +99,6 @@ function addingProductsToList () {
 		var listOfProducts = newProductsList;
 		var stringifiedList = JSON.stringify(listOfProducts);
 		localStorage.setItem("listOfProducts",stringifiedList);
-		//retrieveData(listOfProducts);
 	}
 
 	
@@ -130,13 +128,12 @@ function addingProductsToList () {
 		}  
 	}
 
-
 readFrozenData();
 totalizePrices();
 }	
 
 	
-
+// CAROUSEL OF PICTURESON TOP
 
 function	carouselRecipes (){
 	$(".img-recipe").ready(function(e){
@@ -146,10 +143,10 @@ function	carouselRecipes (){
 		function loop (){
 			setTimeout (function() {
 				// DEBUG
-				$("#recipe1").attr("src","img/415x234(" + cont + ").jpg");
-				$("#recipe2").attr("src","img/415x234(" + (cont+1) + ").jpg");
-				$("#recipe3").attr("src","img/415x234(" + (cont+2) + ").jpg");
-				$("#recipe4").attr("src","img/415x234(" + (cont+3) + ").jpg");
+				$("#recipe1").fadeOut(0).attr("src","img/415x234(" + cont + ").jpg").fadeIn(2000);
+				$("#recipe2").fadeOut(0).attr("src","img/415x234(" + (cont+1) + ").jpg").fadeIn(2000);
+				$("#recipe3").fadeOut(0).attr("src","img/415x234(" + (cont+2) + ").jpg").fadeIn(2000);
+				$("#recipe4").fadeOut(0).attr("src","img/415x234(" + (cont+3) + ").jpg").fadeIn(2000);
 				cont++;
 					if (cont < 9) {
 						loop();
@@ -162,7 +159,7 @@ function	carouselRecipes (){
 	});
 }
 
-
+// CHECK PASSWORD LOG IN
 	
 function checkPassword() {
 	var firstPassword = "";
@@ -190,16 +187,7 @@ function checkPassword() {
 			$("#cornfirm").text("Wrong password");
 		}
 	});
-
-	
-
 }
-
-
-
-
-
-
 
 
 
