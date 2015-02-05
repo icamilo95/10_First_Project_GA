@@ -300,6 +300,7 @@ function showSearchedProduct () {
 function supporting() {
 	$(".support-button").on("click", function () {
 		$(".supportUser").fadeIn(500);
+		hideDivsFade();
 	});
 
 }
@@ -316,11 +317,11 @@ function hideDivs () {
 function hideDivsFade () {
 	$(".searched-product-display").fadeOut(500);
 	$(".log-in-form-div").fadeOut(500);
-	$(".hide-buton").on("click",function(e){
-		$(".log-in-form-div").fadeOut(500);
-	});
+
 	$(".hide-buton-search").on("click",function(e){
 		$(".searched-product-display").fadeOut(500);
+		$(".supportUser").fadeOut(500);
+		$(".log-in-form-div").fadeOut(500);
 	});
 }
 
