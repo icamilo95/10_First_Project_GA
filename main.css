@@ -120,6 +120,19 @@ div.col-md-7 {
 	margin-right: 9px;
 }
 
+.all-products {
+	position: absolute;
+	z-index: -1;
+	max-width: 80%;
+}
+
+.all-products-text {
+	position: absolute;
+	z-index: -1;
+	margin-top: 120px;
+	margin-right: 90px;
+}
+
 /*------AMOUNT-1-------*/
 
 .amount-1 {
@@ -165,10 +178,12 @@ div.col-md-2.amount-2 {
 }
 /*-------BODY-------*/
 
-.separator-1, .separator-2 , .separator-3, .separator-4 , .separator-5 {
+.separator-1 , .separator-3, .separator-4 , .separator-5 {
 	margin-top: 5px;
 }
 
-
+.separator-2{
+	margin-top: 10px;
+}
 
 
