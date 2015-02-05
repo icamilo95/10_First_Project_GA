@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+<link rel="stylesheet" href="main.css">
+<head>
+	<meta charset="UTF-8">
+	<title>GrocerieApp</title>
+</head>
+<body>
+
+
+<div class="container-1">
+	<!-- RECIPES ON TOP -->
+	<div class="row recipes ">
+	  <div class="col-md-3 recipe"><img src="img/415x234(1).jpg" class="img-recipe" id="recipe1" alt="img1" ></div>
+	  <div class="col-md-3 recipe"><img src="img/415x234(2).jpg" class="img-recipe" id="recipe2" alt="img2"></div>
+	  <div class="col-md-3 recipe"><img src="img/415x234(3).jpg" class="img-recipe" id="recipe3" alt="img3"></div>
+	  <div class="col-md-3 recipe"><img src="img/415x234(4).jpg" class="img-recipe" id="recipe4" alt="img4"></div>
+	  
+	</div>
+	
+	<!-- MENUBAR -->
+	<div class="row menubar-login">
+	  <div class="col-md-2 menu"><a href="index.html" class="signup">LOGO</a></div>
+	  <div class="col-md-4">
+	  	<form class="navbar-form navbar-left search-menu-group" role="search">
+	  	<div class="form-group">
+	    <input type="text" class="form-control search-input" placeholder="Search">
+	  	</div>
+	  	<button type="submit" class="btn btn-default">Submit</button>
+		</form>
+	  </div>
+	  
+	  <div class="col-md-1 menu"><a href="login.html" class="signup">Log In</a></div>
+	  <div class="col-md-1 menu"><a href="" class="signup">Sign Up</a></div>
+	  <div class="col-md-1 menu"><a href="" class="signup">Closest_Store</a></div>
+	  <div class="col-md-1 menu"><a href="" class="signup">Delivery</a></div>
+	  <div class="col-md-1 menu"><a href="" class="signup">Support</a></div>
+	  <div class="col-md-1 menu"></div>
+	</div>
+</div>	
+	<!-- PROMOTIONS AND CHECKOUT -->
+	<div class="container-2">
+		<div class="separator-1">
+			<div class="row prmotion">
+				<div class="col-md-2 promo">Sales 1</div>
+				<div class="col-md-1 promo">.col-md-1</div>
+				<div class="col-md-1 promo">.col-md-1</div>
+				<div class="col-md-1 promo">.col-md-1</div>
+				<div class="col-md-1 promo">.col-md-1</div>
+				<div class="col-md-6 promo">
+					<div class="final-amount">Cart:</div>
+					<div class="final-amount"><input type="text" placeholder="Your products"></div>
+					<div class="final-amount">Total:</div>
+					<div class="final-amount"><input type="text" class="totalHolder" placeholder="Your total"> </div>
+					<br>
+					<div><button>Proceed to Checkout!</button></div>
+				</div>
+			</div>
+		</div>
+
+<!-- REGISTRATION FORM -->
+		<div class="separator-2-login">
+			<div class="row">
+				<form class="login-form" action="javascript:void(0)">
+
+					<div class="col-md-1 format-login"></div>
+					<div class="col-md-2 format-login labels">
+						<label for="">Name:</label><br><br>
+						<label for="">Last name:</label><br><br>	
+						<label for="">Email address:</label><br><br>
+						<label for="">Password:</label><br><br><br>
+						<label for="">Type password again:</label><br>
+					</div>
+					<div class="col-md-4 format-login">
+						<input type="text" id="name" placeholder="welcome to ..."><br><br>
+						<input type="text" id="last-name"><br><br>
+						<input type="text" id="email"><br><br>
+						<input type="password" id="password">
+						<h5 id="message-digits">Password must contain at least 6 characters</h5>
+						<input type="password" id="password-again"><br><br>
+						<h5 id="cornfirm"> </h5>
+						<input type="submit" id="button-log" onClick="parent.location='login.html'">
+					</div>
+				
+					<div class="col-md-5 ad">Test 1<div></div>
+				</form>
+		</div>
+
+
+
+
+
+
+<!-- JAVASCRIPT -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="app.js"></script>
+<script src="API.js"></script>
+</body>
+</html>	
+
+
+
+
+
+

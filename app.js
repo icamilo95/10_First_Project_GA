@@ -1,6 +1,6 @@
 $(document).ready(function() { 
 
-var inventoryList = {1:11.40,2:23,3:30.8,4:40,5:50,6:10.20,7:20,8:30,9:40,10:50};
+var inventoryList = {1:11.40,2:23,3:30.8,4:40,5:50,6:10.20,7:20,8:30,9:40,10:50,11:5};
 var newProductsList = {};
 
 hideDivs();
@@ -10,6 +10,7 @@ getProduct();
 showLogIn();
 addingProductsToList();
 checkPassword();
+resetCart();
 
 // --------------RETRIEVE DATA FROM LOCA STORAGE--------------
 
@@ -20,6 +21,14 @@ function retrieveData () {
 		newProductsList = unfrozen;
 		return newProductsList;
 	}
+}
+
+function resetCart () {
+
+	$(".signup").on("click", function(){
+		localStorage.clear();
+
+	});
 }
 
 // --------------ADD PRODUCT TO LIST AND CART - TOTALIZE --------------
@@ -41,8 +50,11 @@ function addingProductsToList () {
 		});
 		$('.negative').on("click", function (e){
 		var productCode = parseInt(this.id);
-		console.log(this.id);
 		subtractProdcutFromList(productCode);	
+		});
+		$('.product-only').on("click", function (e){
+		var productCode = parseInt(this.id);
+		addNewProductToList(productCode);	
 		});
 	}	
 
@@ -101,7 +113,7 @@ function addingProductsToList () {
 
 
 	function storeData () {
-		console.log(newProductsList);
+		// console.log(newProductsList);
 		var listOfProducts = newProductsList;
 		var stringifiedList = JSON.stringify(listOfProducts);
 		localStorage.setItem("listOfProducts",stringifiedList);
@@ -139,7 +151,7 @@ totalizePrices();
 }	
 
 	
-// --------------CAROUSEL OF PICTURESON TOP--------------
+// --------------CAROUSEL--------------
 
 function	carouselRecipes (){
 	$(".img-recipe").ready(function(e){
@@ -171,21 +183,21 @@ function checkPassword() {
 	var firstPassword = "";
 	var secondPassword = "";
 	$("form #password").on("keyup", function(e){
-		console.log($("#password").val().length);
+		// console.log($("#password").val().length);
 		if ($("#password").val().length < 6) {
 			$("#message-digits").text("Password must contain at least 6 characters");
 			$("#message-digits").show();	
 		}  else {
 			firstPassword = $("#password").val();
 			$("#message-digits").text("Secure password");
-			console.log(firstPassword);
+			// console.log(firstPassword);
 		}
 	});
 
 	$("form #password-again").on("keyup", function(e){
-			console.log($("#password-again").val().length);
+			// console.log($("#password-again").val().length);
 			secondPassword = $("#password-again").val();
-			console.log(secondPassword);
+			// console.log(secondPassword);
 		if (secondPassword === firstPassword) {
 			$("#conrfirm").text("Correct Log In");
 			logInMessage();
@@ -255,15 +267,18 @@ function displayProductImage (){
 				// console.log(productImg);
 				 $(".productImage").attr("src",productImg);
 				 $(".description").text(productDescription);
-				 $(".item-category").text(productCategory);
+				 $(".item-category").text("Category: " + productCategory);
+				 $(".ItemName-text").text(selectedProduct);
+				 console.log(selectedProduct);
+
 			
 			// WE NEED TO DO SOME APPENDING/REMOVING
 			showSearchedProduct();
-
+			$("separator-1").append(selectedProduct);
 			$("separator-1").append(productImg);
 			$("separator-1").append(productDescription);
 			$("separator-1").append(productCategory);
-			console.log(productImg);
+			
 			// $('#myModal').modal('hide');
 			}
 
@@ -280,7 +295,6 @@ $('#myModal').on('shown.bs.modal', function () {
 // --------------UNHIDE DIV'S--------------
 
 function showLogIn () {
-
 	$(".loginClick").on("click", function (e) {
 		hideDivsFade();
 		$(".log-in-form-div").fadeIn(500);	
@@ -288,9 +302,7 @@ function showLogIn () {
 }
 
 function showSearchedProduct () {
-	
 	$(".searched-product-display").fadeIn(500);
-
 }
 
 
@@ -299,6 +311,8 @@ function showSearchedProduct () {
 function hideDivs () {
 	$(".searched-product-display").hide();
 	$(".log-in-form-div").hide();
+	$(".welcome-message").hide();
+
 }
 
 function hideDivsFade () {
@@ -313,15 +327,16 @@ function hideDivsFade () {
 
 }
 
-
-
 //----------------AUTHORIZATION AFTER LOGIN------------------
 
 function logInMessage (){
 	$(".button-log").on("click",function (e){
-		$("#login-ID").text("Hello_Camilo");	
+		$("#login-ID").text("Hello_Camilo");
+		$(".welcome-message").fadeIn(500);
+		$(".log-in-form-div").fadeOut(2500);
+
+
 	});
-	
 }
 
 

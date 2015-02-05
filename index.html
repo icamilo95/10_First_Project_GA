@@ -51,7 +51,7 @@
 						<!-- end of Modal -->
 	  </div>
 	  
-	  <div class="col-md-1 menu loginClick "><a href="" id="login-ID" class="signup loginClick">Log In</a></div>
+	  <div class="col-md-1 menu "><a id="login-ID" class="signup loginClick">Log In</a></div>
 	  <div class="col-md-1 menu"><a href="" class="signup">Sign Up</a></div>
 	  <div class="col-md-1 menu"><a href="" class="signup">Closest_Store</a></div>
 	  <div class="col-md-1 menu"><a href="" class="signup">Delivery</a></div>
@@ -86,10 +86,38 @@
 		<!-- DISPLAY SEARCHED PRODUCT  -->
 
 		<div class="image searched-product-display">
-			<img class="productImage" src="">	
-			<h3 class="item-category"></h3>
-			<p class="description"></p>
-			<button type="button" class="btn btn-default hide-buton-search">Hide</button>
+
+			<div class="row">
+				<div class="col-sm-9">
+					<h5 class="ItemName-text"></h5>
+					<div class="row">
+						<div class="col-xs-3 col-sm-3">
+							
+							<img class="productImage" src="">
+						</div>
+						<div class="col-xs-7 col-sm-7">
+							<h4>Description</h4> 
+							<h5 class="item-category"></h5>
+							<p class="description"></p>
+						</div>
+						<div class="col-xs-1 col-sm-2">
+							<button type="button" class="btn btn-default  product-only" id="11-product" >Add to cart</button>
+
+							<button type="button" class="btn btn-default hide-buton-search">Hide window</button>
+
+							
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+
+				
+			
+			
+			
 		</div>
 
 
@@ -107,38 +135,23 @@
 					<label class="label-form" for="">Type password again:</label>
 				  </div>
 				  <div class="col-md-4">
-
 					<input type="text" id="name" placeholder="welcome to ..."><br>
 					<input type="text" id="last-name"><br>
 					<input type="text" id="email"><br>
 					<input type="password" id="password"><br>
 					<h5 id="message-digits">Password must contain at least 6 characters</h5>
 					<input type="password" id="password-again">
-					<h5 id="conrfirm"> </h5>
-					
-
+					<h5 id="conrfirm"> </h5>					
+					<!-- submit button -->
 					<button type="button" class="button-log btn btn-default">Submit</button>
-					
-					<!-- <input type="submit"  class=""> -->
-
 				  </div>
-				  
-
-
-				  <div class="col-md-1"><button type="button" class="btn btn-default hide-buton">Hide</button></div>
+				  <div class="col-md-5"><button type="button" class="btn btn-default hide-buton">Hide</button></div>
+				  <h1 class="welcome-message">Welcome Camilo!</h1>
 				</div>
 			
 				
 			</form>
 		</div>
-
-		
-
-
-
-
-
-
 
 		<!-- FIRST LINE OF PRODUCTS -->
 		<div class="separator-2">
