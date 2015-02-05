@@ -38,8 +38,7 @@
 	  		<button type="submit" class="btn btn-default send btn  send" data-toggle="modal" data-target=".bs-example-modal-sm" disabled>Submit</button>
 		</form>
 
-	  						<!-- Modal -->
-		
+	  	<!-- Modal -->
 		<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
 			<div class="modal-dialog modal-sm ">
 				<div class="modal-content">List of products <hr>
@@ -48,14 +47,14 @@
 				</div>
 			</div>
 		</div>
-						<!-- end of Modal -->
+		<!-- end of Modal -->
 	  </div>
 	  
 	  <div class="col-md-1 menu "><a id="login-ID" class="signup loginClick">Log In</a></div>
 	  <div class="col-md-1 menu"><a href="" class="signup">Sign Up</a></div>
 	  <div class="col-md-1 menu"><a href="" class="signup">Closest_Store</a></div>
 	  <div class="col-md-1 menu"><a href="" class="signup">Delivery</a></div>
-	  <div class="col-md-1 menu"><a href="" class="signup">Support</a></div>
+	  <div class="col-md-1 menu"><a class="signup support-button">Support</a></div>
 	  <div class="col-md-1 menu"></div>
 	</div>
 </div>	
@@ -69,15 +68,15 @@
 				<div class="col-md-1 promo">.col-md-1</div>
 				<div class="col-md-1 promo">.col-md-1</div>
 				<div class="col-md-6 promo">
-					<div class="final-amount">Cart:</div>
-					<div class="final-amount"><input type="text" placeholder="Your products"></div>
-					<div class="final-amount">Total:</div>
-					<div class="final-amount"><input type="text" class="totalHolder" placeholder="Your total"> </div>
-					<br>
-					<div>
-						<form action="#">
-    					<input type="submit" value="Proceed to Checkout!"  class="loginClick">
-						</form>
+					<div class="final-amount">
+						<div class="form-group form-inline ">
+							<div class="input-group">
+								<div class="input-group-addon">Total $</div>
+								<input type="text" class="form-control totalHolder" id="exampleInputAmount" placeholder="Your total">
+								<div class="input-group-addon">.00</div>
+							</div>
+							<button class="loginClick">Proceed to Checkout!</button>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -92,7 +91,6 @@
 					<h5 class="ItemName-text"></h5>
 					<div class="row">
 						<div class="col-xs-3 col-sm-3">
-							
 							<img class="productImage" src="">
 						</div>
 						<div class="col-xs-7 col-sm-7">
@@ -103,53 +101,67 @@
 						<div class="col-xs-1 col-sm-2">
 							<button type="button" class="btn btn-default  product-only" id="11-product" >Add to cart</button>
 
-							<button type="button" class="btn btn-default hide-buton-search">Hide window</button>
-
-							
+							<button type="button" class="btn btn-default hide-buton-search">Hide window</button>	
 						</div>
 					</div>
 				</div>
-			</div>
+			</div>		
+		</div>
 
+			<!-- SUPPORT -->
 
-
-
-				
-			
-			
-			
+		<div class="row supportUser">
+				<div class="col-sm-2"></div>
+				<div class="col-sm-8">
+					<div class="row">
+						<form class="form-inline">
+						<div class="form-group">
+							<label for="exampleInputName2"></label>
+							<input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+						</div>
+						<div class="form-group">
+							<label for="exampleInputEmail2">Email</label>
+							<input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
+						</div>
+						<button type="submit" class="btn btn-default">Send</button>
+						</form>
+					</div>
+					<div class="row">
+						<textarea class="form-control" rows="3">Text</textarea>
+					</div>
+				</div>
+				<div class="col-sm-2"></div>
 		</div>
 
 
-		<!-- LOG IN FORM -->
+
+
+			<!-- LOG IN FORM -->
 		<div class="log-in-form-div">
 			<form class="login-form" action="javascript:void(0)">
-				
-				<div class="row">
-				  <div class="col-md-1"></div>
-				  <div class="col-md-2">
-					<label class="label-form" for="">Name:</label><br>
-					<label class="label-form" for="">Last name:</label><br>	
-					<label class="label-form" for="">Email address:</label><br>
-					<label class="label-form" for="">Password:</label><br><br><br>
-					<label class="label-form" for="">Type password again:</label>
-				  </div>
-				  <div class="col-md-4">
-					<input type="text" id="name" placeholder="welcome to ..."><br>
-					<input type="text" id="last-name"><br>
-					<input type="text" id="email"><br>
-					<input type="password" id="password"><br>
-					<h5 id="message-digits">Password must contain at least 6 characters</h5>
-					<input type="password" id="password-again">
-					<h5 id="conrfirm"> </h5>					
-					<!-- submit button -->
-					<button type="button" class="button-log btn btn-default">Submit</button>
-				  </div>
-				  <div class="col-md-5"><button type="button" class="btn btn-default hide-buton">Hide</button></div>
-				  <h1 class="welcome-message">Welcome Camilo!</h1>
-				</div>
 			
-				
+			<div class="row loginform">
+				<div class="col-md-1"></div>
+				<div class="col-md-6">
+					<table>
+						<tr><td>Name:</td><td><input type="text" id="name" placeholder="welcome to ..."></td></tr>
+						<tr><td>Last Name:</td><td><input type="text" id="last-name"></td></tr>
+						<tr><td>Email address:</td><td><input type="text" id="email"></td></tr>
+						<tr><td>Password:</td><td><input type="password" id="password"></td></tr>
+						<tr><td></td><td><h5 id="message-digits">Password must contain at least 6 characters</h5></td></tr>
+						<tr><td>Type password again:</td><td><input type="password" id="password-again"></td></tr>
+						<tr><td></td><td><div class="row"><h5 id="conrfirm"> </h5></div></td></tr>
+						<tr><td><button type="button" class="button-log btn btn-default">Submit</button></td></tr>
+						
+					</table>
+				</div>
+				<div class="col-md-5">
+				<div class="row"><button type="button" class="btn btn-default hide-buton">Hide</button></div>
+					<div class="row"><h1 class="welcome-message">Welcome Camilo!</h1></div>
+						
+				</div>
+			</div>
+
 			</form>
 		</div>
 
@@ -269,7 +281,7 @@
 		</div>
 
 
-	</div><!--Closes Container -->	
+	</div><!--Closes Container 2 -->	
 
 
 

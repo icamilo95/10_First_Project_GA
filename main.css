@@ -1,10 +1,7 @@
 
 
-/*RECIPE*/
-.row {
-	margin-left: 0px;
-	margin-right: 0px;
-}
+/*----------RECIPE------------*/
+
 .recipe {
 	border-left: 1px solid white;
 	border-right: 1px solid white;
@@ -19,9 +16,12 @@
 }
 
 
-/*MENUBAR*/
+/*-----------MENUBAR-----------*/
 
-
+.menubar {
+	border:1px solid black;
+	background-color: #4d8ed0;
+}
 
 .signup {
 	color: white;
@@ -35,33 +35,15 @@
 
 
 
-/*PRMOTION & CHECKOUT*/
+/*-----PRMOTION & CHECKOUT------*/
 
 .promo {
 	border:1px solid black;
 	height: 70px;
 }
 
-.final-amount {
-	display: inline-block;
-}
 
-
-.separator-1, .separator-2 , .separator-3, .separator-4 , .separator-5 {
-	margin-top: 10px;
-}
-
-
-
-
-/*MENUBAR*/
-.menubar {
-	border:1px solid black;
-	background-color: #4d8ed0;
-}
-
-
-/*PRODUCT-1*/
+/*----------PRODUCTS----------*/
 .product {
 	border:1px solid black;
 	height: 170px;
@@ -79,6 +61,8 @@
 
 }
 
+/*------AMOUNT-1-------*/
+
 .amount-1 {
 	height: 30px;
 	border:1px solid black;
@@ -88,7 +72,7 @@
 	display: inline-block;
 }
 
-/*PRODUCT-2*/
+/*-------AMOUNT-2-------*/
 
 .amount-2 {
 	height: 30px;
@@ -97,12 +81,8 @@
 
 
 
-
-
-
-.label-form {
-	text-align: right;
-	
+.separator-1, .separator-2 , .separator-3, .separator-4 , .separator-5 {
+	margin-top: 10px;
 }
 
 

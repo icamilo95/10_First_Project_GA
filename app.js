@@ -6,11 +6,13 @@ var newProductsList = {};
 hideDivs();
 carouselRecipes();
 retrieveData();
+
 // getProduct();
 showLogIn();
 addingProductsToList();
 checkPassword();
 resetCart();
+supporting();
 
 // --------------RETRIEVE DATA FROM LOCA STORAGE--------------
 
@@ -24,10 +26,8 @@ function retrieveData () {
 }
 
 function resetCart () {
-
 	$(".signup").on("click", function(){
 		localStorage.clear();
-
 	});
 }
 
@@ -130,14 +130,6 @@ function addingProductsToList () {
 				}			
 		}
 	}
-
-	// function Product (quantity,price){
-	// 	this.quantity = quantity;
-	// 	this.price = price;
-	// }
-	// var bread = new Product (20,25);
-	// var milk = new Product (10,10);
-
 	
 	function readFrozenData () {
 		for (var productCodes in newProductsList) {
@@ -295,7 +287,7 @@ $('#myModal').on('shown.bs.modal', function () {
 // --------------UNHIDE DIV'S--------------
 
 function showLogIn () {
-	$(".loginClick").on("click", function (e) {
+	$(".loginClick").on("click", function () {
 		hideDivsFade();
 		$(".log-in-form-div").fadeIn(500);	
 	});
@@ -305,6 +297,12 @@ function showSearchedProduct () {
 	$(".searched-product-display").fadeIn(500);
 }
 
+function supporting() {
+	$(".support-button").on("click", function () {
+		$(".supportUser").fadeIn(500);
+	});
+
+}
 
 //----------------HIDE DIV'S------------------
 
@@ -312,7 +310,7 @@ function hideDivs () {
 	$(".searched-product-display").hide();
 	$(".log-in-form-div").hide();
 	$(".welcome-message").hide();
-
+	$(".supportUser").hide();
 }
 
 function hideDivsFade () {
@@ -324,7 +322,6 @@ function hideDivsFade () {
 	$(".hide-buton-search").on("click",function(e){
 		$(".searched-product-display").fadeOut(500);
 	});
-
 }
 
 //----------------AUTHORIZATION AFTER LOGIN------------------
@@ -336,10 +333,7 @@ function logInMessage (){
 		$(".log-in-form-div").fadeOut(2500);
 		$(".send").removeAttr("disabled");
 		$(".inputSearch").attr("placeholder", "Search");
-
 		getProduct();
-
-
 	});
 }
 
