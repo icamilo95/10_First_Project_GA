@@ -187,10 +187,10 @@ function checkPassword() {
 			secondPassword = $("#password-again").val();
 			console.log(secondPassword);
 		if (secondPassword === firstPassword) {
-			$("#cornfirm").text("Correct Log In");
-			$("#button-log").attr("onClick","parent.location='index.html'");					
-		} else {
-			$("#cornfirm").text("Wrong password");
+			$("#conrfirm").text("Correct Log In");
+			logInMessage();
+		} else {	
+			$("#conrfirm").text("Wrong password");
 		}
 	});
 }
@@ -314,6 +314,15 @@ function hideDivsFade () {
 }
 
 
+
+//----------------AUTHORIZATION AFTER LOGIN------------------
+
+function logInMessage (){
+	$(".button-log").on("click",function (e){
+		$("#login-ID").text("Hello_Camilo");	
+	});
+	
+}
 
 
 
