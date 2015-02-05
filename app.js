@@ -6,7 +6,7 @@ var newProductsList = {};
 hideDivs();
 carouselRecipes();
 retrieveData();
-getProduct();
+// getProduct();
 showLogIn();
 addingProductsToList();
 checkPassword();
@@ -334,6 +334,10 @@ function logInMessage (){
 		$("#login-ID").text("Hello_Camilo");
 		$(".welcome-message").fadeIn(500);
 		$(".log-in-form-div").fadeOut(2500);
+		$(".send").removeAttr("disabled");
+		$(".inputSearch").attr("placeholder", "Search");
+
+		getProduct();
 
 
 	});
