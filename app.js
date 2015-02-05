@@ -176,7 +176,7 @@ function checkPassword() {
 	var secondPassword = "";
 	$("form #password").on("keyup", function(e){
 		// console.log($("#password").val().length);
-		if ($("#password").val().length < 6) {
+		if ($("#password").val().length < 2) {
 			$("#message-digits").text("Password must contain at least 6 characters");
 			$("#message-digits").show();	
 		}  else {
@@ -266,7 +266,7 @@ function displayProductImage (){
 			
 			// WE NEED TO DO SOME APPENDING/REMOVING
 			showSearchedProduct();
-			$("separator-1").append(selectedProduct);
+			$("separator-1").append(selectedProduct + "<hr>");
 			$("separator-1").append(productImg);
 			$("separator-1").append(productDescription);
 			$("separator-1").append(productCategory);

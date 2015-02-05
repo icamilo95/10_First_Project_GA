@@ -57,9 +57,9 @@
 	  <div class="col-md-1 menu"><a class="signup support-button">Support</a></div>
 	  <div class="col-md-1 menu"></div>
 	</div>
-</div>	
+	
 	<!-- PROMOTIONS AND CHECKOUT -->
-	<div class="container-2">
+	
 		<div class="separator-1">
 			<div class="row prmotion">
 				<div class="col-md-2 promo">Sales 1</div>
@@ -67,7 +67,7 @@
 				<div class="col-md-1 promo">.col-md-1</div>
 				<div class="col-md-1 promo">.col-md-1</div>
 				<div class="col-md-1 promo">.col-md-1</div>
-				<div class="col-md-6 promo">
+				<div class="col-md-6 promo " >
 					<div class="final-amount">
 						<div class="form-group form-inline ">
 							<div class="input-group">
@@ -75,7 +75,7 @@
 								<input type="text" class="form-control totalHolder" id="exampleInputAmount" placeholder="Your total">
 								<div class="input-group-addon">.00</div>
 							</div>
-							<button class="loginClick">Proceed to Checkout!</button>
+							<button class="loginClick btn btn-danger">Proceed to Checkout!</button>
 						</div>
 					</div>
 				</div>
@@ -84,14 +84,15 @@
 
 		<!-- DISPLAY SEARCHED PRODUCT  -->
 
-		<div class="image searched-product-display">
+		<div class="image searched-product-display ">
 
-			<div class="row">
-				<div class="col-sm-9">
-					<h5 class="ItemName-text"></h5>
+			<div class="row jumbotron searchedrow">
+				<div class="col-sm-1 "></div>
+				<div class="col-sm-9 ">
+					<h4 class="ItemName-text"></h4>
 					<div class="row">
 						<div class="col-xs-3 col-sm-3">
-							<img class="productImage" src="">
+							<img class="productImage" src="" width="140px" >
 						</div>
 						<div class="col-xs-7 col-sm-7">
 							<h4>Description</h4> 
@@ -110,7 +111,7 @@
 
 			<!-- SUPPORT -->
 
-		<div class="row supportUser">
+		<div class="row supportUser jumbotron">
 				<div class="col-sm-2"></div>
 				<div class="col-sm-8">
 					<div class="row">
@@ -133,16 +134,13 @@
 				<div class="col-sm-2"></div>
 		</div>
 
-
-
-
 			<!-- LOG IN FORM -->
-		<div class="log-in-form-div">
+		<div class="log-in-form-div jumbotron">
 			<form class="login-form" action="javascript:void(0)">
 			
 			<div class="row loginform">
 				<div class="col-md-1"></div>
-				<div class="col-md-6">
+				<div class="col-md-4">
 					<table>
 						<tr><td>Name:</td><td><input type="text" id="name" placeholder="welcome to ..."></td></tr>
 						<tr><td>Last Name:</td><td><input type="text" id="last-name"></td></tr>
@@ -152,10 +150,9 @@
 						<tr><td>Type password again:</td><td><input type="password" id="password-again"></td></tr>
 						<tr><td></td><td><div class="row"><h5 id="conrfirm"> </h5></div></td></tr>
 						<tr><td><button type="button" class="button-log btn btn-default">Submit</button></td></tr>
-						
 					</table>
 				</div>
-				<div class="col-md-5">
+				<div class="col-md-7">
 				<div class="row"><button type="button" class="btn btn-default hide-buton">Hide</button></div>
 					<div class="row"><h1 class="welcome-message">Welcome Camilo!</h1></div>
 						
@@ -165,10 +162,13 @@
 			</form>
 		</div>
 
+
+</div>		
+<div class="container-2">
 		<!-- FIRST LINE OF PRODUCTS -->
 		<div class="separator-2">
 			<div class="row products-1">
-				<div class="col-md-1 product">Product</div>
+				<div class="col-md-1 "></div>
 				<div class="col-md-2 product" id="1-product">Test 1
 				<input class="form-control 1-price" type="text" placeholder="$ 0.00" disabled></div>
 				<div class="col-md-2 product" id="2-product">Test2
@@ -179,7 +179,7 @@
 				<input class="form-control 4-price" type="text" placeholder="$ 0.00" disabled></div>
 				<div class="col-md-2 product" id="5-product">Test 5
 				<input class="form-control 5-price" type="text" placeholder="$ 0.00" disabled></div>
-				<div class="col-md-1 product"></div>
+				<div class="col-md-1"></div>
 
 			</div>
 		</div>
@@ -187,38 +187,38 @@
 		<!-- FIRST LINE OF QUANTITIES -->
 		<div class="separator-3">
 			<div class="row amounts-1">
-				<div class="col-md-1 amount-1"></div>
+				<div class="col-md-1 "></div>
 				<div class="col-md-2 amount-1">
 					<div class="amount-result">Quantity</div>		
 					<span class="glyphicon glyphicon-chevron-up positive"  id="1-product"></span>
 					<span class="glyphicon glyphicon-chevron-down negative" id="1-product"></span>
-					<div class="amount-result" id="1-result" >0</div>
+					<div class="amount-result-digit" id="1-result" >0</div>
 				</div>
 				<div class="col-md-2 amount-1">
 					<div class="amount-result">Quantity</div>		
 					<span class="glyphicon glyphicon-chevron-up positive"  id="2-product"></span>
 					<span class="glyphicon glyphicon-chevron-down negative" id="2-product"></span>
-					<div class="amount-result" id="2-result" >0</div>		
+					<div class="amount-result-digit" id="2-result" >0</div>		
 				</div>
 				<div class="col-md-2 amount-1">
 					<div class="amount-result">Quantity</div>		
 					<span class="glyphicon glyphicon-chevron-up positive"  id="3-product"></span>
 					<span class="glyphicon glyphicon-chevron-down negative" id="3-product"></span>
-					<div class="amount-result" id="3-result" >0</div>		
+					<div class="amount-result-digit" id="3-result" >0</div>		
 				</div>
 				<div class="col-md-2 amount-1">
 					<div class="amount-result">Quantity</div>		
 					<span class="glyphicon glyphicon-chevron-up positive"  id="4-product"></span>
 					<span class="glyphicon glyphicon-chevron-down negative" id="4-product"></span>
-					<div class="amount-result" id="4-result" >0</div>
+					<div class="amount-result-digit" id="4-result" >0</div>
 				</div>
 				<div class="col-md-2 amount-1">
 					<div class="amount-result">Quantity</div>		
 					<span class="glyphicon glyphicon-chevron-up positive"  id="5-product"></span>
 					<span class="glyphicon glyphicon-chevron-down negative" id="5-product"></span>
-					<div class="amount-result" id="5-result" >0</div>
+					<div class="amount-result-digit" id="5-result" >0</div>
 				</div>
-				<div class="col-md-1 amount-1"></div>
+				<div class="col-md-1"></div>
 
 			</div>
 		</div>
@@ -226,7 +226,7 @@
 		<!-- SECOND LINE OF PRODUCTS -->
 		<div class="separator-4">
 			<div class="row products-2">
-				<div class="col-md-1 product"></div>
+				<div class="col-md-1"></div>
 				<div class="col-md-2 product" id="6-product">Product 6
 				<input class="form-control 6-price" type="text" placeholder="$ 0.00" disabled></div>
 				<div class="col-md-2 product" id="7-product" >.col-md-6
@@ -237,7 +237,7 @@
 				<input class="form-control 9-price" type="text" placeholder="$ 0.00" disabled></div>
 				<div class="col-md-2 product" id="10-product" >.col-md-9
 				<input class="form-control 10-price" type="text" placeholder="$ 0.00" disabled></div>
-				<div class="col-md-1 product"></div>
+				<div class="col-md-1"></div>
 
 			</div>
 		</div>
@@ -245,37 +245,37 @@
 		<!-- SECOND LINE OF QUANTITIES -->
 		<div class="separator-5">
 			<div class="row amounts-2">
-				<div class="col-md-1 amount-2"></div>
+				<div class="col-md-1 "></div>
 				<div class="col-md-2 amount-2">
 					<div class="amount-result">Quantity</div>	
 					<span class="glyphicon glyphicon-chevron-up positive"  id="6-product"></span>
-					<span class="glyphicon glyphicon-chevron-down negative" id="6-product"></span><div class="amount-result" id="6-result" >0</div>
+					<span class="glyphicon glyphicon-chevron-down negative" id="6-product"></span><div class="amount-result-digit" id="6-result" >0</div>
 				</div>
 				<div class="col-md-2 amount-2">
 					<div class="amount-result">Quantity</div>		
 					<span class="glyphicon glyphicon-chevron-up positive"  id="7-product"></span>
 					<span class="glyphicon glyphicon-chevron-down negative" id="7-product"></span>
-					<div class="amount-result" id="7-result" >0</div>
+					<div class="amount-result-digit" id="7-result" >0</div>
 				</div>
 				<div class="col-md-2 amount-2">
 					<div class="amount-result">Quantity</div>		
 					<span class="glyphicon glyphicon-chevron-up positive"  id="8-product"></span>
 					<span class="glyphicon glyphicon-chevron-down negative" id="8-product"></span>
-					<div class="amount-result" id="8-result" >0</div>
+					<div class="amount-result-digit" id="8-result" >0</div>
 				</div>
 				<div class="col-md-2 amount-2">
 					<div class="amount-result">Quantity</div>		
 					<span class="glyphicon glyphicon-chevron-up positive"  id="9-product"></span>
 					<span class="glyphicon glyphicon-chevron-down negative" id="9-product"></span>
-					<div class="amount-result" id="9-result" >0</div>
+					<div class="amount-result-digit" id="9-result" >0</div>
 				</div>
 				<div class="col-md-2 amount-2">
 					<div class="amount-result">Quantity</div>		
 					<span class="glyphicon glyphicon-chevron-up positive"  id="10-product"></span>
 					<span class="glyphicon glyphicon-chevron-down negative" id="10-product"></span>
-					<div class="amount-result" id="10-result" >0</div>
+					<div class="amount-result-digit" id="10-result" >0</div>
 				</div>
-				<div class="col-md-1 amount-2"></div>
+				<div class="col-md-1"></div>
 
 			</div>
 		</div>
