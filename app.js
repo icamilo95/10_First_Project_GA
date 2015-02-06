@@ -2,6 +2,9 @@ $(document).ready(function() {
 
 var inventoryList = {1:11,2:23,3:30,4:40,5:50,6:10,7:20,8:30,9:40,10:50,11:10}; //change display amount
 var newProductsList = {};
+var firstPassword = "";
+var secondPassword = "";
+// var frozen, unfrozen;
 
 hideDivs();
 carouselRecipes();
@@ -15,12 +18,34 @@ supporting();
 // --------------RETRIEVE DATA FROM LOCA STORAGE--------------
 
 function retrieveData () {			
-	var frozen = localStorage.getItem("listOfProducts");
-	var unfrozen = JSON.parse(frozen);
-	if (unfrozen !== null) {
-		newProductsList = unfrozen;
-		return newProductsList;
+	
+	for (var datas in localStorage) {
+		console.log(datas);
+			if (datas === "listOfProducts") {
+				var frozen = localStorage.getItem("listOfProducts");
+
+				var unfrozen = JSON.parse(frozen);
+			 	if (unfrozen !== null) {
+					newProductsList = unfrozen;
+					return newProductsList;
+			 		}
+			 } 
+			  if (datas === "passW") {
+			 		
+				var frozent = localStorage.getItem("passW");
+				
+				if (frozent !== "undefined") {
+					console.log(frozent);
+					var unfrozen1 = JSON.parse(frozent);
+					console.log(unfrozen1);
+					$("#password").text(unfrozen1);
+					
+				}
+			}
 	}
+
+		
+	
 }
 
 function resetCart () {
@@ -103,16 +128,6 @@ function addingProductsToList () {
 		}
 		storeData();
 	}
-
-
-	function storeData () {
-		// console.log(newProductsList);
-		var listOfProducts = newProductsList;
-		var stringifiedList = JSON.stringify(listOfProducts);
-		localStorage.setItem("listOfProducts",stringifiedList);
-
-	}
-
 	
 	function displayPrices () {
 		for( var product in inventoryList ) {
@@ -165,8 +180,7 @@ function	carouselRecipes (){
 // --------------CHECK PASSWORD LOG IN--------------
 	
 function checkPassword() {
-	var firstPassword = "";
-	var secondPassword = "";
+	
 	$("form #password").on("keyup", function(e){
 		
 		if ($("#password").val().length < 2) {
@@ -183,6 +197,7 @@ function checkPassword() {
 		secondPassword = $("#password-again").val();
 		if (secondPassword === firstPassword) {
 			$("#conrfirm").text("!! Correct Log In !!");
+
 			logInMessage();
 		} else {	
 			$("#conrfirm").text("Wrong password");
@@ -323,10 +338,24 @@ function logInMessage (){
 		$(".log-in-form-div").fadeOut(3000);
 		$(".send").removeAttr("disabled");
 		$(".inputSearch").attr("placeholder", "Search");
+		storeData(firstPassword);
 		getProduct();
 	});
 }
 
+//----------------STORE DATA LS------------------
+
+function storeData (password) {
+		
+		var listOfProducts = newProductsList;
+		var stringifiedList = JSON.stringify(listOfProducts);
+		localStorage.setItem("listOfProducts",stringifiedList);
+		var passW = password;
+		var stringifiedPassW = JSON.stringify(passW);
+		localStorage.setItem("passW",stringifiedPassW);
+		
+
+	}
 
 
 
