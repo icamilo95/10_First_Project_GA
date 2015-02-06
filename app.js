@@ -141,7 +141,6 @@ function addingProductsToList () {
 readFrozenData();
 totalizePrices();
 }	
-
 	
 // --------------CAROUSEL--------------
 
