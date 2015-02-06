@@ -158,9 +158,9 @@ function	carouselRecipes (){
 				$("#recipe3").fadeOut(0).attr("src","img/415x234(" + (cont+2) + ").jpg").fadeIn(2000);
 				$("#recipe4").fadeOut(0).attr("src","img/415x234(" + (cont+3) + ").jpg").fadeIn(2000);
 				cont++;
-					if (cont < 9) {
+					if (cont < 11) {
 						loop();
-					} else if (cont === 9) {
+					} else if (cont === 11) {
 						cont = 1;
 						loop();
 					}
@@ -181,7 +181,7 @@ function checkPassword() {
 			$("#message-digits").show();	
 		}  else {
 			firstPassword = $("#password").val();
-			$("#message-digits").text("Secure password");
+			$("#message-digits").text(" Secure password. Welcome to Foodapp ");
 			// console.log(firstPassword);
 		}
 	});
@@ -191,7 +191,7 @@ function checkPassword() {
 			secondPassword = $("#password-again").val();
 			// console.log(secondPassword);
 		if (secondPassword === firstPassword) {
-			$("#conrfirm").text("Correct Log In");
+			$("#conrfirm").text("!! Correct Log In !!");
 			logInMessage();
 		} else {	
 			$("#conrfirm").text("Wrong password");

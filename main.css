@@ -20,7 +20,7 @@
 
 .menubar {
 	
-	background-color: #4d8ed0;
+	background-color: #0c50d0;
 }
 
 .signup {
@@ -31,7 +31,7 @@
 	margin-top: 20px;
 	text-align: center;
 	height: 40px;	
-	border: 1px solid black;
+	/*border: 1px solid black;*/
 	
 }
 
@@ -158,6 +158,34 @@ div.col-md-7 {
 	padding-top: 50px;
 }
 
+
+table.table-login {
+	background-color: rgba(50,50,50,0.5);
+	margin-top: 10px;
+	margin-bottom: 10px;
+	width: 540px;
+	height: 300px;
+	border-radius: 15px;
+
+}
+
+.text-login , #message-digits{
+	text-align: center;
+	color: white;
+}
+
+#conrfirm {
+	color: white;
+}
+
+.welcome-message{
+	color: white;
+	margin-top: 140px;
+}
+
+div.row.loginform {
+	background-image: url("img/Shopping.png");
+}
 /*----------SUPPORT----------*/
 textarea {
 	margin-top: 20px;
@@ -200,6 +228,9 @@ textarea {
 	margin-top: 120px;
 	margin-right: 90px;
 }
+
+
+
 
 /*------AMOUNT-1-------*/
 
@@ -252,6 +283,13 @@ div.col-md-2.amount-2 {
 
 .separator-2{
 	margin-top: 10px;
+}
+
+footer {
+	margin-top: 20px;
+	height: 10px;
+	background-color: #0c50d0;
+	width: 100%;
 }
 
 
