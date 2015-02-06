@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="main.css">
 <head>
 	<meta charset="UTF-8">
-	<title>GrocerieApp</title>
+	<title>MyFoodApp</title>
 </head>
 <body>
 <div class="container-1">
@@ -40,12 +40,12 @@
 
 	  	<!-- Modal -->
 		<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-			<div class="modal-dialog modal-sm ">
-				<div class="modal-content">List of products <hr>
+			<!-- <div class="modal-dialog modal-sm "> -->
+				<div class="modal-content" width:"400px" ><h4 id="list-text"> List of related products </h4><hr>
 					<ul class="list-searched">
 					</ul>
 				</div>
-			</div>
+			<!-- </div> -->
 		</div>
 		<!-- end of Modal -->
 	  </div>
@@ -55,18 +55,33 @@
 	  <div class="col-md-1 menu"><a href="" class="signup">Closest_Store</a></div>
 	  <div class="col-md-1 menu"><a href="" class="signup">Delivery</a></div>
 	  <div class="col-md-1 menu"><a class="signup support-button">Support</a></div>
-	  <div class="col-md-1 menu"></div>
+	  <div class="col-md-1 menu" id="menu-last"></div>
 	</div>
 	
 	<!-- PROMOTIONS AND CHECKOUT -->
 	
 		<div class="separator-1">
 			<div class="row prmotion">
-				<div class="col-md-2 promo">Sales 1</div>
-				<div class="col-md-1 promo">.col-md-1</div>
-				<div class="col-md-1 promo">.col-md-1</div>
-				<div class="col-md-1 promo">.col-md-1</div>
-				<div class="col-md-1 promo">.col-md-1</div>
+				<div class="col-md-2 promo">
+					<div class="dropdown">
+						<button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+						Categories
+							<span class="caret"></span>
+						</button>
+							<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+								<li role="presentation"><a>Beverages</a></li>
+								<li role="presentation"><a>Bread & Bakery</a></li>
+								<li role="presentation"><a>Cookies, Snacks & Candy</a></li>
+								<li role="presentation"><a>Frozen Foods</a></li>
+								<li role="presentation" class="divider"></li>
+								  <a>Others</a>
+							</ul>
+					</div>
+				</div>
+				<div class="col-md-1 promo">Recipes & Meals</div>
+				<div class="col-md-1 promo plus3">Pharmacy</div>
+				<div class="col-md-1 promo plus3">Deli</div>
+				<div class="col-md-1 promo plus3">Gift Cards</div>
 				<div class="col-md-6 promo " >
 					<div class="final-amount">
 						<div class="form-group form-inline ">
@@ -100,7 +115,9 @@
 							<p class="description"></p>
 						</div>
 						<div class="col-xs-1 col-sm-2">
-							<button type="button" class="btn btn-default  product-only" id="11-product" >Add to cart</button>
+							<button type="button" class="btn btn-primary  product-only" id="11-product" >Add to cart</button>
+							<br>
+							<br>
 
 							<button type="button" class="btn btn-default hide-buton-search">Hide window</button>	
 						</div>
@@ -125,35 +142,36 @@
 							<input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
 						</div>
 						<button type="submit" class="btn btn-default">Send</button>
+						<button type="button" class="btn btn-default hide-buton-search">Hide window</button>
 						</form>
 					</div>
 					<div class="row">
-						<textarea class="form-control" rows="3">Text</textarea>
+						<textarea class="form-control" rows="3" placeholder="Text"></textarea>
 					</div>
 				</div>
 				<div class="col-sm-2"></div>
 		</div>
 
 			<!-- LOG IN FORM -->
-		<div class="log-in-form-div jumbotron">
+		<div class="log-in-form-div ">
 			<form class="login-form" action="javascript:void(0)">
 			
 			<div class="row loginform">
 				<div class="col-md-1"></div>
 				<div class="col-md-4">
-					<table>
-						<tr><td>Name:</td><td><input type="text" id="name" placeholder="welcome to ..."></td></tr>
-						<tr><td>Last Name:</td><td><input type="text" id="last-name"></td></tr>
-						<tr><td>Email address:</td><td><input type="text" id="email"></td></tr>
-						<tr><td>Password:</td><td><input type="password" id="password"></td></tr>
-						<tr><td></td><td><h5 id="message-digits">Password must contain at least 6 characters</h5></td></tr>
-						<tr><td>Type password again:</td><td><input type="password" id="password-again"></td></tr>
-						<tr><td></td><td><div class="row"><h5 id="conrfirm"> </h5></div></td></tr>
-						<tr><td><button type="button" class="button-log btn btn-default">Submit</button></td></tr>
+					<table class="table-login">
+						<tr><td class="text-login">Name:</td><td><input type="text" id="name" placeholder="welcome to Foodapp"></td></tr>
+						<tr><td class="text-login">Last Name:</td><td><input type="text" id="last-name"></td></tr>
+						<tr><td class="text-login">Email address:</td><td><input type="text" id="email"></td></tr>
+						<tr><td class="text-login">Password:</td><td><input type="password" id="password"></td></tr>
+						<tr><td class="text-login"></td><td><h5 id="message-digits">Password must contain at least 6 characters</h5></td></tr>
+						<tr><td class="text-login">Type password again:</td><td><input type="password" id="password-again"></td></tr>
+						<tr><td class="text-login"></td><td><div class="row"><h5 id="conrfirm"> </h5></div></td></tr>
+						<tr><td class="text-login"></td><td><button type="button" class="button-log btn btn-default">Submit</button></td></tr>
 					</table>
 				</div>
 				<div class="col-md-7">
-				<div class="row"><button type="button" class="btn btn-default hide-buton">Hide</button></div>
+				<div class="row">  <button type="button" class="btn btn-default hide-buton-search">Hide window</button></div>
 					<div class="row"><h1 class="welcome-message">Welcome Camilo!</h1></div>
 						
 				</div>
@@ -168,16 +186,24 @@
 		<div class="separator-2">
 			<div class="row products-1">
 				<div class="col-md-1 "></div>
-				<div class="col-md-2 product" id="1-product">Test 1
-				<input class="form-control 1-price" type="text" placeholder="$ 0.00" disabled></div>
-				<div class="col-md-2 product" id="2-product">Test2
-				<input class="form-control 2-price" type="text" placeholder="$ 0.00" disabled></div>
-				<div class="col-md-2 product" id="3-product">Test 3
-				<input class="form-control 3-price" type="text" placeholder="$ 0.00" disabled></div>
-				<div class="col-md-2 product" id="4-product">Test 4
-				<input class="form-control 4-price" type="text" placeholder="$ 0.00" disabled></div>
-				<div class="col-md-2 product" id="5-product">Test 5
-				<input class="form-control 5-price" type="text" placeholder="$ 0.00" disabled></div>
+				<div class="col-md-2 product" id="1-product"><img src="img/1-food.png" class="all-products">
+					<p class="all-products-text">Extra Large Hot House Tomatoes</p>
+					<input class="form-control 1-price" type="text" placeholder="$ 0.00" disabled></div>
+				<div class="col-md-2 product" id="2-product"><img src="img/2-food.png" class="all-products">
+					<p class="all-products-text">Sweet Navel Oranges</p>
+					<input class="form-control 2-price" type="text" placeholder="$ 0.00" disabled></div>
+				<div class="col-md-2 product" id="3-product"><img src="img/3-food.png" class="all-products">
+					<p class="all-products-text">Orange Bell Peppers</p>
+					<input class="form-control 3-price" type="text" placeholder="$ 0.00" disabled></div>
+							
+				<div class="col-md-2 product" id="4-product"><img src="img/4-food.png" class="all-products">
+					<p class="all-products-text">Häagen-Dazs Ice Cream 3 for $10</p>
+					<input class="form-control 4-price" type="text" placeholder="$ 0.00" disabled></div>
+							
+				<div class="col-md-2 product" id="5-product"><img src="img/5-food.png" class="all-products">
+					<p class="all-products-text">30-Pack Miller</p>
+					<input class="form-control 5-price" type="text" placeholder="$ 0.00" disabled></div>
+							
 				<div class="col-md-1"></div>
 
 			</div>
@@ -227,15 +253,20 @@
 		<div class="separator-4">
 			<div class="row products-2">
 				<div class="col-md-1"></div>
-				<div class="col-md-2 product" id="6-product">Product 6
+				<div class="col-md-2 product" id="6-product"><img src="img/6-food.png" class="all-products">
+					<p class="all-products-text">Tropicana Orange Juice</p>
 				<input class="form-control 6-price" type="text" placeholder="$ 0.00" disabled></div>
-				<div class="col-md-2 product" id="7-product" >.col-md-6
+				<div class="col-md-2 product" id="7-product"><img src="img/7-food.png" class="all-products">
+					<p class="all-products-text">Fresh Salmon Fillets/lb</p>
 				<input class="form-control 7-price" type="text" placeholder="$ 0.00" disabled></div>
-				<div class="col-md-2 product" id="8-product" >.col-md-7
+				<div class="col-md-2 product" id="8-product"><img src="img/8-food.png" class="all-products">
+					<p class="all-products-text">Fritos BUY 1 GET 1 FREE </p>
 				<input class="form-control 8-price" type="text" placeholder="$ 0.00" disabled></div>
-				<div class="col-md-2 product" id="9-product" >.col-md-8
+				<div class="col-md-2 product" id="9-product"><img src="img/9-food.png" class="all-products">
+					<p class="all-products-text">Signature Cafe® Turkey Breast / lb</p>
 				<input class="form-control 9-price" type="text" placeholder="$ 0.00" disabled></div>
-				<div class="col-md-2 product" id="10-product" >.col-md-9
+				<div class="col-md-2 product" id="10-product"><img src="img/10-food.png" class="all-products">
+					<p class="all-products-text">Tide Powder Detergent</p>
 				<input class="form-control 10-price" type="text" placeholder="$ 0.00" disabled></div>
 				<div class="col-md-1"></div>
 
@@ -284,7 +315,9 @@
 	</div><!--Closes Container 2 -->	
 
 
-
+<footer>
+	
+</footer>
 
 
 <!-- JAVASCRIPT -->
@@ -293,8 +326,9 @@
 <script src="app.js"></script>
 <!-- <script src="API.js"></script> -->
 </body>
-</html>	
 
+
+</html>	
 
 
 

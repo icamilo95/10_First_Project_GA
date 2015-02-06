@@ -20,7 +20,7 @@
 
 .menubar {
 	
-	background-color: #4d8ed0;
+	background-color: #0c50d0;
 }
 
 .signup {
@@ -31,14 +31,45 @@
 	margin-top: 20px;
 	text-align: center;
 	height: 40px;	
+	/*border: 1px solid black;*/
+	
 }
 
+div.col-md-2.menu {
+	/*LOGO*/
+	margin-left: 20px;
+}
+
+div.col-md-1.menu {
+	/*login,signup, clicks*/
+	margin-right: 3px;
+}
+
+div.col-md-4 {
+	/*search input*/
+	top: 3px;
+	width: 320px;
+	margin-right: 50px;
+}
+
+#menu-last {
+	width: 120px;
+}
 
 /*-----PRMOTION & CHECKOUT------*/
 
 .promo {
-	border:1px solid black;
-	height: 70px;
+	/*border:1px solid black;*/
+	height: 50px;
+	padding-top: 7px;
+	text-align: center;
+	background-color: #419641;
+	color: white;
+	
+}
+
+.plus3 {
+	padding-top: 15px;
 }
 
 
@@ -46,8 +77,11 @@ div.col-md-6.promo {
 	padding-left: 60px;
 }
 
-.promo {
-	padding-top: 18px;
+button#dropdownMenu1.btn.btn-success.dropdown-toggle {
+	margin-top: -7px;
+	width: 185px;
+	height: 48px;
+
 }
 
 .button.loginClick {
@@ -76,17 +110,47 @@ div.col-md-2.promo {
 	border:1px solid black;
 }
 
-.description {
-	font-size: 14px;
+p.description {
+	font-size: 10px;
+}
+
+
+
+.modal-content {
+top:25px;
+left:60%;
+/*outline: none;*/
+width: 470px;
+/*#myModal4 .modal-dialog  {width:900px;}*/
+}
+
+
+h4.ItemName-text {
+	margin-bottom: 40px;
+	margin-top: -10px;
+}
+
+div.modal-backdrop.fade.in {
+	height: 147px;
+}
+
+
+#list-text {
+	text-align: center;
+	color: #1f58c7;
+}
+
+.modal-backdrop, .modal-backdrop.fade.in {
+opacity: 0.7;
+filter: alpha(opacity=70);
+background: none;
+height: 40px;
+ 
 }
 
 
 /*----------LOG IN----------*/
 
-div.col-md-4 {
-	/*aligns text to the right ---step 7*/
-	margin-left: 150px;
-}
 
 div.col-md-7 {
 	/*gets back the button to inline-block --step 8  */
@@ -94,6 +158,38 @@ div.col-md-7 {
 	padding-top: 50px;
 }
 
+
+table.table-login {
+	background-color: rgba(50,50,50,0.5);
+	margin-top: 10px;
+	margin-bottom: 10px;
+	width: 540px;
+	height: 300px;
+	border-radius: 15px;
+
+}
+
+.text-login , #message-digits{
+	text-align: center;
+	color: white;
+}
+
+#conrfirm {
+	color: white;
+}
+
+.welcome-message{
+	color: white;
+	margin-top: 140px;
+}
+
+div.row.loginform {
+	background-image: url("img/Shopping.png");
+}
+/*----------SUPPORT----------*/
+textarea {
+	margin-top: 20px;
+}
 
 
 /*----------PRODUCTS----------*/
@@ -119,6 +215,22 @@ div.col-md-7 {
 	margin-left: 4px;
 	margin-right: 9px;
 }
+
+.all-products {
+	position: absolute;
+	z-index: -1;
+	max-width: 80%;
+}
+
+.all-products-text {
+	position: absolute;
+	z-index: -1;
+	margin-top: 120px;
+	margin-right: 90px;
+}
+
+
+
 
 /*------AMOUNT-1-------*/
 
@@ -164,10 +276,19 @@ div.col-md-2.amount-2 {
 }
 /*-------BODY-------*/
 
-.separator-1, .separator-2 , .separator-3, .separator-4 , .separator-5 {
+.separator-1 , .separator-3, .separator-4 , .separator-5 {
 	margin-top: 5px;
 }
 
+.separator-2{
+	margin-top: 10px;
+}
 
+footer {
+	margin-top: 20px;
+	height: 10px;
+	background-color: #0c50d0;
+	width: 100%;
+}
 
 
