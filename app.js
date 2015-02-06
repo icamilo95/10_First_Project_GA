@@ -1,6 +1,6 @@
 $(document).ready(function() { 
 
-var inventoryList = {1:11.40,2:23,3:30.8,4:40,5:50,6:10.20,7:20,8:30,9:40,10:50,11:5};
+var inventoryList = {1:11,2:23,3:30,4:40,5:50,6:10,7:20,8:30,9:40,10:50,11:5};
 var newProductsList = {};
 
 hideDivs();
@@ -152,10 +152,10 @@ function	carouselRecipes (){
 		function loop (){
 			setTimeout (function() {
 				// DEBUG
-				$("#recipe1").fadeOut(0).attr("src","img/415x234(" + cont + ").jpg").fadeIn(2000);
-				$("#recipe2").fadeOut(0).attr("src","img/415x234(" + (cont+1) + ").jpg").fadeIn(2000);
-				$("#recipe3").fadeOut(0).attr("src","img/415x234(" + (cont+2) + ").jpg").fadeIn(2000);
-				$("#recipe4").fadeOut(0).attr("src","img/415x234(" + (cont+3) + ").jpg").fadeIn(2000);
+				$("#recipe1").fadeOut(0).attr("src","img/415x234(" + cont + ").jpg").fadeIn(1000);
+				$("#recipe2").fadeOut(0).attr("src","img/415x234(" + (cont+1) + ").jpg").fadeIn(1000);
+				$("#recipe3").fadeOut(0).attr("src","img/415x234(" + (cont+2) + ").jpg").fadeIn(1000);
+				$("#recipe4").fadeOut(0).attr("src","img/415x234(" + (cont+3) + ").jpg").fadeIn(1000);
 				cont++;
 					if (cont < 11) {
 						loop();
@@ -163,7 +163,7 @@ function	carouselRecipes (){
 						cont = 1;
 						loop();
 					}
-			},3000);
+			},4500);
 		}
 	});
 }
@@ -180,7 +180,7 @@ function checkPassword() {
 			$("#message-digits").show();	
 		}  else {
 			firstPassword = $("#password").val();
-			$("#message-digits").text(" Secure password. Welcome to Foodapp ");
+			$("#message-digits").text(" Secure password. Welcome to Foodapp !! ");
 			// console.log(firstPassword);
 		}
 	});
@@ -307,30 +307,31 @@ function supporting() {
 //----------------HIDE DIV'S------------------
 
 function hideDivs () {
-	$(".searched-product-display").hide();
-	$(".log-in-form-div").hide();
-	$(".welcome-message").hide();
-	$(".supportUser").hide();
+	$(".searched-product-display,.log-in-form-div, .back-welcome, .welcome-message, .supportUser").hide();
 }
 
 function hideDivsFade () {
 	$(".searched-product-display").fadeOut(500);
 	$(".log-in-form-div").fadeOut(500);
 
-	$(".hide-buton-search").on("click",function(e){
-		$(".searched-product-display").fadeOut(500);
-		$(".supportUser").fadeOut(500);
-		$(".log-in-form-div").fadeOut(500);
+	$(".hide-buton-search, .back-welcome").on("click",function(e){
+		$(".searched-product-display,.supportUser,.log-in-form-div ").fadeOut(500);
 	});
+
+	
+
+
 }
 
 //----------------AUTHORIZATION AFTER LOGIN------------------
 
 function logInMessage (){
 	$(".button-log").on("click",function (e){
-		$("#login-ID").text("Hello_Camilo");
+		$(".table-login").fadeOut(0);
+		$("#login-ID").text("My Account");
+		$(".back-welcome").fadeIn(0);
 		$(".welcome-message").fadeIn(500);
-		$(".log-in-form-div").fadeOut(2500);
+		$(".log-in-form-div").fadeOut(3000);
 		$(".send").removeAttr("disabled");
 		$(".inputSearch").attr("placeholder", "Search");
 		getProduct();

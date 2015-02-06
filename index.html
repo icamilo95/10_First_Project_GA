@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="main.css">
 <head>
 	<meta charset="UTF-8">
-	<title>MyFoodApp</title>
+	<title>MyfoodApp</title>
 </head>
 <body>
 <div class="container-1">
@@ -25,7 +25,7 @@
 	
 	<!-- MENUBAR -->
 	<div class="row menubar">
-	  <div class="col-md-2 menu"><a href="index.html" class="signup">LOGO</a></div>
+	  <div class="col-md-2 "><a href="index.html" class="signup"><img src="img/logo.png" id="logo-img" alt=""> </a></div>
 	  <div class="col-md-4">
 	 
 
@@ -52,7 +52,7 @@
 	  
 	  <div class="col-md-1 menu "><a id="login-ID" class="signup loginClick">Log In</a></div>
 	  <div class="col-md-1 menu"><a href="" class="signup">Sign Up</a></div>
-	  <div class="col-md-1 menu"><a href="" class="signup">Closest_Store</a></div>
+	  <div class="col-md-1 menu"><a href="" class="signup">Find Store</a></div>
 	  <div class="col-md-1 menu"><a href="" class="signup">Delivery</a></div>
 	  <div class="col-md-1 menu"><a class="signup support-button">Support</a></div>
 	  <div class="col-md-1 menu" id="menu-last"></div>
@@ -159,21 +159,25 @@
 			<div class="row loginform">
 				<div class="col-md-1"></div>
 				<div class="col-md-4">
+
+					<div class="back-welcome">
+						<div class="row"><h1 class="welcome-message">Welcome Camilo!</h1>
+						</div>
+					</div>
 					<table class="table-login">
-						<tr><td class="text-login">Name:</td><td><input type="text" id="name" placeholder="welcome to Foodapp"></td></tr>
-						<tr><td class="text-login">Last Name:</td><td><input type="text" id="last-name"></td></tr>
-						<tr><td class="text-login">Email address:</td><td><input type="text" id="email"></td></tr>
+						<tr><td class="text-login">Name:</td><td><input type="text" class="inp-large" id="name" placeholder="welcome to Myfoodapp"></td></tr>
+						<tr><td class="text-login">Last Name:</td><td><input type="text" class="inp-large" id="last-name"></td></tr>
+						<tr><td class="text-login">Email address:</td><td><input type="text" class="inp-large" id="email"></td></tr>
 						<tr><td class="text-login">Password:</td><td><input type="password" id="password"></td></tr>
 						<tr><td class="text-login"></td><td><h5 id="message-digits">Password must contain at least 6 characters</h5></td></tr>
 						<tr><td class="text-login">Type password again:</td><td><input type="password" id="password-again"></td></tr>
-						<tr><td class="text-login"></td><td><div class="row"><h5 id="conrfirm"> </h5></div></td></tr>
-						<tr><td class="text-login"></td><td><button type="button" class="button-log btn btn-default">Submit</button></td></tr>
+						<tr><td class="text-login"></td><td><div class="row"><h5 id="conrfirm">Myfoodapp</h5></div></td></tr>
+						<tr><td class="text-login"></td><td><button type="button" class="button-log btn btn-danger"> Submit </button>
+						<button type="button" class="btn btn-default hide-buton-search">Go Back</button></td></tr>
 					</table>
+
 				</div>
-				<div class="col-md-7">
-				<div class="row">  <button type="button" class="btn btn-default hide-buton-search">Hide window</button></div>
-					<div class="row"><h1 class="welcome-message">Welcome Camilo!</h1></div>
-						
+				<div class="col-md-7">				
 				</div>
 			</div>
 
@@ -257,13 +261,13 @@
 					<p class="all-products-text">Tropicana Orange Juice</p>
 				<input class="form-control 6-price" type="text" placeholder="$ 0.00" disabled></div>
 				<div class="col-md-2 product" id="7-product"><img src="img/7-food.png" class="all-products">
-					<p class="all-products-text">Fresh Salmon Fillets/lb</p>
+					<p class="all-products-text">Premium meat and cheese</p>
 				<input class="form-control 7-price" type="text" placeholder="$ 0.00" disabled></div>
 				<div class="col-md-2 product" id="8-product"><img src="img/8-food.png" class="all-products">
-					<p class="all-products-text">Fritos BUY 1 GET 1 FREE </p>
+					<p class="all-products-text">Peet's Coffee</p>
 				<input class="form-control 8-price" type="text" placeholder="$ 0.00" disabled></div>
 				<div class="col-md-2 product" id="9-product"><img src="img/9-food.png" class="all-products">
-					<p class="all-products-text">Signature Cafe® Turkey Breast / lb</p>
+					<p class="all-products-text">Signature Cafe Turkey Breast/lb</p>
 				<input class="form-control 9-price" type="text" placeholder="$ 0.00" disabled></div>
 				<div class="col-md-2 product" id="10-product"><img src="img/10-food.png" class="all-products">
 					<p class="all-products-text">Tide Powder Detergent</p>
