@@ -1,13 +1,11 @@
 $(document).ready(function() { 
 
-var inventoryList = {1:11,2:23,3:30,4:40,5:50,6:10,7:20,8:30,9:40,10:50,11:5};
+var inventoryList = {1:11,2:23,3:30,4:40,5:50,6:10,7:20,8:30,9:40,10:50,11:10}; //change display amount
 var newProductsList = {};
 
 hideDivs();
 carouselRecipes();
 retrieveData();
-
-// getProduct();
 showLogIn();
 addingProductsToList();
 checkPassword();
@@ -40,22 +38,17 @@ function addingProductsToList () {
 	checkForProduct();	
 
 	function checkForProduct (newProductsListInStorage){
-		$('.product').on("click", function (e){
+		$('.product,.positive,.product-only').on("click", function (e){
 		var productCode = parseInt(this.id);   
 		addNewProductToList(productCode);	
+		console.log("Codigo" + productCode);
 		});		
-		$('.positive').on("click", function (e){
-		var productCode = parseInt(this.id);
-		addNewProductToList(productCode);	
-		});
+
 		$('.negative').on("click", function (e){
 		var productCode = parseInt(this.id);
 		subtractProdcutFromList(productCode);	
 		});
-		$('.product-only').on("click", function (e){
-		var productCode = parseInt(this.id);
-		addNewProductToList(productCode);	
-		});
+		
 	}	
 
 	function addNewProductToList (productCode){		  
@@ -75,9 +68,9 @@ function addingProductsToList () {
 		}
 	}			
 
-	function displayAmount (productCode) { //display amount in line of "quantities in html"
+	function displayAmount (productCode) { 
 		hideDivsFade();
-		for (var i = 0; i < 11; i++) {
+		for (var i = 0; i < 12; i++) {
 			if (parseInt(productCode) === i) {
 				var result = String("#" +[i] + "-result");	
 				$(result).text(newProductsList[productCode]);
@@ -104,7 +97,7 @@ function addingProductsToList () {
 	}
 
 
-	function checkIfProductsinList (totalToCart){
+	function checkIfProductsinList (totalToCart){ //Empties the array if customer decreases all products to 0
 		if (totalToCart === 0) {
 			newProductsList = {};
 		}
@@ -117,6 +110,7 @@ function addingProductsToList () {
 		var listOfProducts = newProductsList;
 		var stringifiedList = JSON.stringify(listOfProducts);
 		localStorage.setItem("listOfProducts",stringifiedList);
+
 	}
 
 	
@@ -174,21 +168,19 @@ function checkPassword() {
 	var firstPassword = "";
 	var secondPassword = "";
 	$("form #password").on("keyup", function(e){
-		// console.log($("#password").val().length);
+		
 		if ($("#password").val().length < 2) {
 			$("#message-digits").text("Password must contain at least 6 characters");
 			$("#message-digits").show();	
 		}  else {
 			firstPassword = $("#password").val();
 			$("#message-digits").text(" Secure password. Welcome to Foodapp !! ");
-			// console.log(firstPassword);
+			
 		}
 	});
 
 	$("form #password-again").on("keyup", function(e){
-			// console.log($("#password-again").val().length);
-			secondPassword = $("#password-again").val();
-			// console.log(secondPassword);
+		secondPassword = $("#password-again").val();
 		if (secondPassword === firstPassword) {
 			$("#conrfirm").text("!! Correct Log In !!");
 			logInMessage();
@@ -227,9 +219,14 @@ function displayProductList (selectedProductFromGet) {
 					$("ul").text("Product does not exist! Try again please.");
 				}else {
 					$("ul").empty();
+					var c = 0;
 					$.each($(data).find('Product'),function(index,product){
+					c++;
 					$("ul").append(("<li class=\"productSearched\">") + $("Itemname",product).text()+"</a>" +("</li>")+"<hr>");
 					
+					if (c > 6) {
+						return false;	
+					}
 					});
 				}
 			}  			
@@ -255,7 +252,6 @@ function displayProductImage (){
 				var productImg =$("ItemImage",$(data).find('Product')[0]).text();
 				var productDescription =$("ItemDescription",$(data).find('Product')[0]).text();
 				var productCategory =$("ItemCategory",$(data).find('Product')[0]).text();
-				// console.log(productImg);
 				 $(".productImage").attr("src",productImg);
 				 $(".description").text(productDescription);
 				 $(".item-category").text("Category: " + productCategory);
@@ -270,12 +266,9 @@ function displayProductImage (){
 			$("separator-1").append(productDescription);
 			$("separator-1").append(productCategory);
 			
-			// $('#myModal').modal('hide');
 			}
-
 		});
 	});
-
 }
 
 $('#myModal').on('shown.bs.modal', function () {
@@ -317,10 +310,6 @@ function hideDivsFade () {
 	$(".hide-buton-search, .back-welcome").on("click",function(e){
 		$(".searched-product-display,.supportUser,.log-in-form-div ").fadeOut(500);
 	});
-
-	
-
-
 }
 
 //----------------AUTHORIZATION AFTER LOGIN------------------
@@ -342,25 +331,6 @@ function logInMessage (){
 
 
 }); //-----DO NOT REMOVE--------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

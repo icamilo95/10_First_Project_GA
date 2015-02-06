@@ -3,8 +3,6 @@
 /*----------RECIPE------------*/
 
 .recipe {
-	/*border-left: 1px solid white;*/
-	/*border-right: 1px solid white;*/
 	height: 100px;
 	padding: 0px;
 }
@@ -20,12 +18,10 @@
 
 #logo-img {
 	width: 250px;
-	mar
 
 }
 
 .menubar {
-	
 	background-color: #0c50d0;
 }
 
@@ -37,8 +33,6 @@
 	margin-top: 20px;
 	text-align: center;
 	height: 40px;	
-	/*border: 1px solid black;*/
-	
 }
 
 div.col-md-2.menu {
@@ -120,8 +114,6 @@ p.description {
 	font-size: 12px;
 }
 
-
-
 .modal-content {
 top:25px;
 left:60%;
@@ -189,8 +181,6 @@ table.table-login , .back-welcome{
 	margin-top: 140px;
 	text-align: center;
 }
-
-
 
 div.row.loginform {
 	background-image: url("img/Shopping.png");
